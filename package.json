@@ -1,0 +1,16 @@
+{
+  "name": "es5js",
+  "version": "1.0.0",
+  "description": "Learn JS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.6"
+  },
+  "author": "Oshchenkov",
+  "license": "ISC"
+}
