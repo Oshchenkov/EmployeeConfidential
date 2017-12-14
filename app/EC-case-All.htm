@@ -327,7 +327,7 @@
 				</div><!-- /.content-container__footer-row -->
 			</div><!-- /.content-container__footer -->
 		</div>
-		<div id="mainTab-InvestigationNotes" class="mainNavigationTabs__tabContent ">
+		<div id="mainTab-InvestigationNotes" class="mainNavigationTabs__tabContent active">
 
 			<div class="subNavigationTabs clearfix">
 				<ul class="subNavigationTabs__tabs-ul clearfix">
@@ -353,12 +353,12 @@
 					<section class="content-container">
 						<div class="content-container__inner">
 							<div class="content-container__inner-additional clearfix">
-								<div class="row">
+								<div class="row row__inner-additional">
 									<div class="col-4">
 										<div class="row">
 											<p class="sectionHeader-col">Incident types</p>
 											<p class="content-container__p">Academic Misconduct</p>
-											<p class="content-container__p">Fraudalent Activities</p>
+											<p class="content-container__p">Fraudalent Activities Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione error consectetur itaque, magnam, cupiditate facere sapiente pariatur ex nostrum quia excepturi animi asperiores eligendi alias. Inventore perferendis fuga harum reiciendis!</p>
 										</div><!-- /.row -->
 										<a href="#" class="btn-link ">Add incident type</a>
 									</div>
@@ -366,7 +366,7 @@
 										<div class="row">
 											<p class="sectionHeader-col">Involved Parties</p>
 											<p class="content-container__p">James Button</p><!-- /.content-container__p -->
-											<p class="content-container__p">Eva Morales</p><!-- /.content-container__p -->
+											<p class="content-container__p">Eva Morales  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione error consectetur itaque, magnam, cupiditate facere sapiente pariatur ex nostrum quia excepturi animi asperiores eligendi alias. Inventore perferendis fuga harum reiciendis!</p><!-- /.content-container__p -->
 										</div><!-- /.row -->
 										
 										<a href="#" class="btn-link ">Add person</a>
@@ -383,6 +383,56 @@
 							</div>
 						</div>
 					</section>
+					
+					<section class="content-container">
+            <div class="content-container__inner">
+                <div class="content-container__inner-additional clearfix">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="row">
+                                <p class="sectionHeader-col">Involved Parties</p>
+                                <!-- ngRepeat: item in model.mediator_involved
+                                ngRepeat: item in model.mediator_not_involved<p class="content-container__p ng-binding ng-scope" ng-repeat="item in model.mediator_not_involved" style="">
+                                    <a href="#" ng-click="mediatorDelete(item.id, 2)" ng-show="!item.added_by_reporter" class="">X</a>
+                                    Mary Longwood HR Director  (Victim)
+                                </p>end ngRepeat: item in model.mediator_not_involved
+                                                             --></div>
+                            <!-- <a href="#" class="btn-link ng-hide" ng-show="!mediatorAddMode" ng-click="mediatorAddMode = !mediatorAddMode" style="">Add person</a> -->
+                            <div ng-show="mediatorAddMode" class="" style="">
+                                <div class="addPerson">
+                                    <div class="addPersonName sampleContainer">
+                                        <div class="personTitle title">First Name</div>
+                                        <div class="personData">
+                                            <input name="personName" class="personDataTextBox fName ng-pristine ng-valid ng-empty error ng-touched" ng-class="{error : !addPerson.FirstName}" ng-model="addPerson.FirstName" style="">
+                                        </div>
+                                    </div>
+
+                                    <div class="addPersonName sampleContainer">
+                                        <div class="personTitle title">Last Name</div>
+                                        <div class="personData">
+                                            <input name="personLastName" class="personDataTextBox lName ng-pristine ng-untouched ng-valid ng-empty error" ng-class="{error : !addPerson.LastName}" ng-model="addPerson.LastName">
+                                        </div>
+                                    </div>
+
+                                    <div class="addPersonInfo sampleContainer">
+                                        <div class="personTitle title">Title</div>
+                                        <div class="personData">
+                                            <input type="text" name="personTitle" class="personDataTextBox witnessTitle ng-pristine ng-untouched ng-valid ng-empty error" ng-class="{error : !addPerson.Title}" ng-model="addPerson.Title">
+                                        </div>
+                                    </div>
+                                    <!-- <dropbox ng-class="{errorDropbox : addPerson.Role.id == 0}" ng-dropbox-textexpr="addPerson.Role.role_en" itemtext="" ng-dropbox-list="model.addNewPersonRoles" ng-dropbox-rootitem="" ng-dropbox-on-select="addPerson.Role" class="ng-isolate-scope errorDropbox"><div class="select" ng-init="expanded = false"><a href="#" class="slct ng-binding" ng-click="expanded = !expanded" ng-class="{ active: expanded }">Select one</a><ul class="drop slide" ng-class="{ active: expanded }">ngRepeat: item in list<li ng-repeat="item in list" ng-click="onSelectFunction(item)" class="ng-scope" style=""><a href="" class="ng-binding">Other</a></li>end ngRepeat: item in list<li ng-repeat="item in list" ng-click="onSelectFunction(item)" class="ng-scope"><a href="" class="ng-binding">Subject or Alleged Violator</a></li>end ngRepeat: item in list<li ng-repeat="item in list" ng-click="onSelectFunction(item)" class="ng-scope"><a href="" class="ng-binding">Victim</a></li>end ngRepeat: item in list<li ng-repeat="item in list" ng-click="onSelectFunction(item)" class="ng-scope"><a href="" class="ng-binding">Witness</a></li>end ngRepeat: item in list</ul></div></dropbox> -->
+                                    <a href="#" class="btn-link" ng-click="addNewPerson()">add person</a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
 					<section class="content-container">
 						<div class="content-container__inner">
 							<p class="sectionHeader">Facts Established</p>
@@ -1140,7 +1190,7 @@
 			</div>
 		</div>
 		<!-- ----------------------------------------------------------------- -->
-		<div id="mainTab-Team" class="mainNavigationTabs__tabContent active">
+		<div id="mainTab-Team" class="mainNavigationTabs__tabContent ">
 			<div class="divider p-tb-20"></div>
 		
 			<div class="content-container__inner clearfix">
