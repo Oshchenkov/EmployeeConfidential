@@ -12,6 +12,14 @@
 		<link rel="stylesheet" href="newCase.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+		<!-- Modal popUp http://jquerymodal.com/ -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+		<!-- Custom dropDown selicts http://selectric.js.org/ -->
+		<script src="libs/Selectric/jquery.selectric.min.js"></script>
+		<link rel="stylesheet" href="libs/Selectric/selectric.css">
+
 </head>
 
 <body>
@@ -86,6 +94,88 @@
 					<div class="breadcrumbs-info__current-page-text">Harassment and/or Discrimination - Toronto, ON, Canada - #22778-STA-2</div>
 				</div>
 				<a href="#" class="btn-link">Resolve</a>
+				
+				<!-- ------------------------------------------------- -->
+				<a href="#openModal" class="breadcrumbs-info__badge" rel="modal:open">1</a>
+				<div id="openModal" class="modal case-modal">
+					<a href="#" class="closeLink modal-close" rel="modal:close"></a>
+					<div class="case-modal__title">Request to close case</div><!-- /.modal-title -->
+					
+
+					<div class="case-modal__selectRow clearfix">
+						<div class="case-modal__selectRow-title">
+							Select Case Reviewer to Sign-Off
+						</div><!-- /.case-modal__selectRow-title -->
+						<div class="case-modal__selectRow-selectric">
+							<div class="select-container case-modal__selectContainer">
+								<select id="SelectCaseReviewrer" class="case-modal__selectOption">
+									<option value="">Select an option...</option>
+									<option value="strawberries">Strawberries</option>
+									<option value="mango">Mango</option>
+									<option value="bananas">Bananas</option>
+									<option value="watermelon">Watermelon</option>
+									<option value="apples">Apples</option>
+									<option value="grapes">Grapes</option>
+									<option value="oranges">Oranges</option>
+									<option value="pineapple">Pineapple</option>
+									<option value="peaches">Peaches</option>
+									<option value="cherries">Cherries</option>
+									<optgroup label="Group 1">
+										<option>Option 1.1</option>
+									</optgroup>
+									<optgroup label="Group 2">
+										<option>Option 2.1</option>
+										<option>Option 2.2</option>
+									</optgroup>
+									<optgroup label="Group 3" disabled>
+										<option>Option 3.1</option>
+										<option>Option 3.2</option>
+										<option>Option 3.3</option>
+									</optgroup>
+								</select>
+							</div>
+						</div><!-- /.case-modal__selectRow-selectric -->
+					</div><!-- /.case-modal__selectRow -->
+					<div class="case-modal__selectRow clearfix">
+						<div class="case-modal__selectRow-title">
+							Reason for Case Closure:
+						</div><!-- /.case-modal__selectRow-title -->
+						<div class="case-modal__selectRow-selectric">
+							<div class="select-container case-modal__selectContainer">
+								<select id="SelectCaseReviewrer" class="case-modal__selectOption">
+									<option value="">Select an option...</option>
+									<option value="strawberries">Strawberries</option>
+									<option value="mango">Mango</option>
+									<option value="bananas">Bananas</option>
+									<option value="watermelon">Watermelon</option>
+									<option value="apples">Apples</option>
+									<option value="grapes">Grapes</option>
+									<option value="oranges">Oranges</option>
+									<option value="pineapple">Pineapple</option>
+									<option value="peaches">Peaches</option>
+									<option value="cherries">Cherries</option>
+									<optgroup label="Group 1">
+										<option>Option 1.1</option>
+									</optgroup>
+									<optgroup label="Group 2">
+										<option>Option 2.1</option>
+										<option>Option 2.2</option>
+									</optgroup>
+									<optgroup label="Group 3" disabled>
+										<option>Option 3.1</option>
+										<option>Option 3.2</option>
+										<option>Option 3.3</option>
+									</optgroup>
+								</select>
+							</div>
+						</div><!-- /.case-modal__selectRow-selectric -->
+					</div><!-- /.case-modal__selectRow -->
+					<div class="case-modal__linkBlockBottom clearfix">
+						<a href="#" class="case-modal__linkBtn whiteBtn">Request to close case</a>
+					</div><!-- /.case-modal__linkBlockBottom -->
+				</div>
+
+				<!-- ------------------------------------------------- -->
 			</div><!-- /.breadcrumbs-info -->
 			<ul class="breadcrumbs-mediators">
 				<li class="breadcrumbs-mediators__li"><a href="#" class="breadcrumbs-mediators__a"><img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="breadcrumbs-mediators__img" /><span class="profile-status online"></span></a></li><!-- /.breadcrumbs-mediators__li -->
@@ -2178,6 +2268,12 @@
 
       blockTeamCircle($('.teamBlock'), "#0ab6a4", "#ba83b8");
       //blockTeamCircle($('.teamBlock'), "#b2b9bb", "#D0B0D1");
+
+
+      // ------------------ Selectric - Customn selects------------------------
+      $('.case-modal__selectOption').selectric({
+			  maxHeight: 240
+			});
         
 
 		})
