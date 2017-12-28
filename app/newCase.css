@@ -39,7 +39,10 @@
 }
 
 /*--------------------ResetCSS-------------------*/
-html, body,
+html, body{
+	margin: 0;
+	padding: 0;
+}
 .container-fluid ol, 
 .container ol, 
 .container ul{
@@ -47,7 +50,7 @@ html, body,
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	/*font: inherit;*/
 	vertical-align: middle;
 }
 /* HTML5 display-role reset for older browsers */
@@ -59,9 +62,9 @@ html, body,
 .container nav, .container section {
 	display: block;
 }
-body {
+/*body {
 	line-height: 1;
-}
+}*/
 .container ol,
 .container ul{
 	list-style: none;
@@ -134,6 +137,7 @@ body {
 .container{
 	margin: 0 auto;
 	padding: 0 30px;
+	line-height: 1;
 }
 .row{
 	margin-bottom: 20px;
@@ -381,6 +385,7 @@ body {
 .header{
 	background-color: #e9f2f2;
 	border-bottom: 1px solid #c8c7c7;
+	line-height: 1;
 }
 
 .header__leftBlock{
@@ -527,6 +532,7 @@ body {
 				height: 32px;
 				min-width: 1px;
 				color: #7e9297;
+				line-height: 1;
 			}
 				.userNavigation__a:active .userNavigation__info{
 					color: rgb(56, 73, 77);
@@ -719,6 +725,10 @@ body {
 .case-modal__selectRow{
 	display: block;
 	margin-bottom: 20px;
+	border: 1px solid transparent;
+}
+.has-error{
+	border: 1px solid red;
 }
 	.case-modal__selectRow-title{
 		display: inline-block;
