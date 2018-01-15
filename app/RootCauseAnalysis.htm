@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<!-- <link rel="icon" href="../../favicon.ico"> -->
+		<title>RootCauseAnalysis</title>
+
+		<link rel="stylesheet" href="newCase.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+	<header class="header">
+		<div class="container clearfix">
+			<div class="header__leftBlock">
+				<div class="headerTop-logo">
+					<a href="#" class="headerTop-logo__link">
+						<div class="headerTop-logo__img"></div>
+					</a>
+				</div>
+				<ul class="mainNavigation">
+					<li class="navConteiner">
+						<a href="#" class="navConteiner__a ">
+							<span class="navConteiner__icon navConteiner__icon_analytics"></span>
+							<span class="navConteiner__name">Analytics</span>
+							<span class="navConteiner__badgeCount "></span>
+						</a></li><!-- /.navConteiner -->
+					<li class="navConteiner">
+						<a href="#" class="navConteiner__a">
+							<span class="navConteiner__icon navConteiner__icon_tasks"></span>
+							<span class="navConteiner__name">Tasks</span>
+							<span class="navConteiner__badgeCount "></span>
+						</a></li><!-- /.navConteiner -->
+					<li class="navConteiner">
+						<a href="#" class="navConteiner__a navConteiner__badgeCount_enable">
+							<span class="navConteiner__icon navConteiner__icon_messages"></span>
+							<span class="navConteiner__name">Messages</span>
+							<span class="navConteiner__badgeCount ">3</span>
+						</a></li><!-- /.navConteiner -->
+					<li class="navConteiner active">
+						<a href="#" class="navConteiner__a navConteiner__badgeCount_enable">
+							<span class="navConteiner__icon navConteiner__icon_dashboard"></span>
+							<span class="navConteiner__name">Dashboard</span>
+							<span class="navConteiner__badgeCount ">80</span>
+						</a></li><!-- /.navConteiner -->
+				</ul><!-- /.mainNavigation -->
+			</div>
+			<div class="header__rightBlock">
+				<div class="userNavigation">
+					<a href="#" class="userNavigation__a">
+						<div class="userNavigation__info">
+							<div class="userNavigation__name">Katelyn</div><!-- /.userNavigation__name -->
+							<div class="userNavigation__surname">Milton</div><!-- /.userNavigation__surname -->
+						</div><!-- /.userNavigation__info -->
+						<div class="userNavigation__logo"><img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="UserLogo" /></div><!-- /.userNavigation__logo -->
+						<div class="userNavigation__triangle"></div><!-- /.userNavigation__triangle -->
+					</a>
+					<ul class="dropDown-navigation">
+						<li class="dropDown-navigation__li"><a href="#" class="dropDown-navigation__a">Settings</a></li><!-- /.dropDown-navigation__li -->
+						<li class="dropDown-navigation__li active"><a href="#" class="dropDown-navigation__a">
+							Password
+						</a></li><!-- /.dropDown-navigation__li -->
+						<li class="dropDown-navigation__li"><a href="#" class="dropDown-navigation__a">
+							Subscription
+						</a></li><!-- /.dropDown-navigation__li -->
+						<li class="dropDown-navigation__li"><a href="#" class="dropDown-navigation__a">
+							Logout
+						</a></li><!-- /.dropDown-navigation__li -->
+					</ul><!-- /.dropDown-navigation -->
+				</div><!-- /.userNavigation -->
+			</div>
+		</div>
+	</header>
+	<div class="container clearfix">
+		<div class="breadcrumbs clearfix">
+			<div class="breadcrumbs-info clearfix">
+				<a href="#" class="breadcrumbs-info__tree-links">Cases</a>
+				<span class="breadcrumbs-info__links-arrow"></span>
+				<div class="breadcrumbs-info__current-page">
+					<!-- <span class="breadcrumbs-info__current-page-status"></span> -->
+					<div class="breadcrumbs-info__current-page-text">Dashboard</div>
+				</div>
+			</div><!-- /.breadcrumbs-info -->
+		</div><!-- /.breadcrumbs -->
+	</div><!-- /.container -->
+
+	<a href="#!" class="hotNews">
+		<div class="container clearfix">
+			<div class="col-2">
+				<div class="hotNews-id">New report: #<span>2325</span></div>
+			</div>
+			<div class="col-10">
+				<div class="hotNews-shortInfo clearfix">
+					<div class="hotNews-shortInfo__text">
+						Anonymous reports about an assault in the Stern Building on April 22, 2015
+					</div><!-- /.hotNews-shortInfo__text -->
+					<div class="hotNews-shortInfo__arrow">&rarr;</div><!-- /.hotNews-shortInfo__arrow -->
+				</div><!-- /.hotNews-shortInfo -->
+			</div>
+		</div><!-- /.container -->
+	</a><!-- /.hotNews -->
+
+	<div class="container mainNavigationTabs_color">
+		<div class="mainNavigationTabs clearfix">
+			<ul class="mainNavigationTabs__tabs-ul clearfix">
+				<li class="mainNavigationTabs__tab-link mainNavigationTabs__changeTab mainNavigationTabs__badgeCount_enable " data-tab="mainTab-ActiveCases">
+					<div class="mainNavigationTabs__tab-name">Active cases</div><!-- /.mainNavigationTabs__tab-name -->
+					<div class="mainNavigationTabs__badgeCount">15</div><!-- /.mainNavigationTabs__badgeCount -->
+				</li>
+				<li class="mainNavigationTabs__tab-link mainNavigationTabs__changeTab active" data-tab="mainTab-CompletedCases">
+					
+					<div class="mainNavigationTabs__tab-name">Completed cases</div>
+					<div class="mainNavigationTabs__badgeCount"></div>
+				</li>
+				<li class="mainNavigationTabs__tab-link mainNavigationTabs__changeTab  " data-tab="mainTab-Spam">
+					<div class="mainNavigationTabs__tab-name">Spam</div>
+					<div class="mainNavigationTabs__badgeCount"></div>
+				</li>
+			</ul>
+
+		</div><!-- /.tabsNavigation -->
+	</div><!-- /.container -->
+
+	<div class="container mainNavigationTabs__tabContent-container ">
+		<!-- -------------------------------------------------------------------- -->
+		<div id="mainTab-ActiveCases" class="mainNavigationTabs__tabContent ">
+			<div class="dashboard-container">
+				<div class="divider p-tb-20"></div><!-- /.divider p-tb-20 -->
+				<div class="dashboard">
+					<div class="dashboard-rowHeader clearfix">
+						<div class="dashboard-col__case dashboard-colHeader clearfix active">
+							<div class="dashboard-colHeader__text">
+								Case
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow sortArrow_up"></div>
+						</div><!-- /.dashboard-col__Case dashboard-colHeader -->
+						<div class="dashboard-col__stage dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Stage
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow sortArrow_down"></div>
+						</div><!-- /.dashboard-col__Stage dashboard-colHeader -->
+						<div class="dashboard-col__age dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Age
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow "></div>
+						</div><!-- /.dashboard-col__Age dashboard-colHeader -->
+						<div class="dashboard-col__incidentType dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Incident Type
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow "></div>
+						</div><!-- /.dashboard-col__incidentType dashboard-colHeader -->
+						<div class="dashboard-col__location dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Location
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow "></div>
+						</div><!-- /.dashboard-col__location dashboard-colHeader -->
+						<div class="dashboard-col__reportDate dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Report date
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow "></div>
+						</div><!-- /.dashboard-col__reportDate dashboard-colHeader -->
+						<div class="dashboard-col__messages dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Messages
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow "></div>
+						</div><!-- /.dashboard-col__messages dashboard-colHeader -->
+						<div class="dashboard-col__tasks dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Tasks
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow "></div>
+						</div><!-- /.dashboard-col__tasks dashboard-colHeader -->
+						<div class="dashboard-col__team dashboard-colHeader clearfix ">
+							<div class="dashboard-colHeader__text">
+								Team
+							</div>
+							<div class="dashboard-colHeader__sortArrow sortArrow "></div>
+						</div><!-- /.dashboard-col__team dashboard-colHeader -->
+					</div><!-- /.dashboard-rowHeader -->
+
+					<div class="dashboard-rowbody">
+						<div class="rowbody__colorLine colorLine colorLine_orange"></div><!-- /.rowbody__colorLine yellow -->
+						<div class="dashboard-col__case dashboard-colbody clearfix">
+							<div class="dashboard-col__case-text">
+								22778-STA-222
+							</div><!-- /.dashboard-col__case-text -->
+						</div><!-- /.dashboard-col__case dashboard-colbody clearfix -->
+						<div class="dashboard-col__stage dashboard-colbody clearfix">
+							<div class="dashboard-col__stage-type">
+								Investigation
+							</div><!-- /.dashboard-col__stage-type -->
+							<div class="dashboard-col__stage-date dashboard-col__stage-date_red">
+								0 days left
+							</div><!-- /.dashboard-col__stage-date -->
+						</div><!-- /.dashboard-col__stage dashboard-colbody clearfix -->
+						<div class="dashboard-col__age dashboard-colbody clearfix">
+							<div class="dashboard-col__age-text">
+								3 days
+							</div><!-- /.dashboard-col__age-text -->
+						</div><!-- /.dashboard-col__age dashboard-colbody clearfix -->
+						<div class="dashboard-col__incidentType dashboard-colbody clearfix">
+							<div class="dashboard-col__incidentType-text">
+								Workplace Health and Safety 
+							</div><!-- /.dashboard-col__incidentType-text -->
+						</div><!-- /.dashboard-col__incidentType dashboard-colbody clearfix -->
+						<div class="dashboard-col__location dashboard-colbody clearfix">
+							<div class="dashboard-col__location-text">
+								Toronto, NY, Canada
+							</div><!-- /.dashboard-col__location-text -->
+						</div><!-- /.dashboard-col__location dashboard-colbody clearfix -->
+						<div class="dashboard-col__reportDate dashboard-colbody clearfix">
+							<div class="dashboard-col__reportDate-text">
+								May 13, 2017
+							</div><!-- /.dashboard-col__reportDate-text -->
+						</div><!-- /.dashboard-col__reportDate dashboard-colbody clearfix -->
+						<div class="dashboard-col__messages dashboard-colbody clearfix">
+							<div class="dashboard-col__messages-text">
+								33
+							</div><!-- /.dashboard-col__messages-text -->
+						</div><!-- /.dashboard-col__messages dashboard-colbody clearfix -->
+						<div class="dashboard-col__tasks dashboard-colbody clearfix">
+							<div class="dashboard-col__tasks-text">
+								1
+							</div><!-- /.dashboard-col__tasks-text -->
+						</div><!-- /.dashboard-col__tasks dashboard-colbody clearfix -->
+						<div class="dashboard-col__team dashboard-colbody clearfix">
+							<ul class="team-list clearfix">
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status online"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/24_636362867608769531.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status away"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								<li class="team-list__li">
+									<a href="#!" class="team-list__a">
+										+
+									</a>
+								</li><!-- /.team-list__li -->
+							</ul><!-- /.team-list -->
+						</div><!-- /.dashboard-col__team dashboard-colbody clearfix -->
+					</div><!-- /.dashboard-rowbody -->
+
+					<div class="dashboard-rowbody">
+						<div class="rowbody__colorLine colorLine colorLine_darkBlue"></div><!-- /.rowbody__colorLine yellow -->
+						<div class="dashboard-col__case dashboard-colbody clearfix">
+							<div class="dashboard-col__case-text">
+								22778-STA-222
+							</div><!-- /.dashboard-col__case-text -->
+						</div><!-- /.dashboard-col__case dashboard-colbody clearfix -->
+						<div class="dashboard-col__stage dashboard-colbody clearfix">
+							<div class="dashboard-col__stage-type">
+								New case
+							</div><!-- /.dashboard-col__stage-type -->
+							<div class="dashboard-col__stage-date dashboard-col__stage-date_green">
+								22 days left
+							</div><!-- /.dashboard-col__stage-date -->
+						</div><!-- /.dashboard-col__stage dashboard-colbody clearfix -->
+						<div class="dashboard-col__age dashboard-colbody clearfix">
+							<div class="dashboard-col__age-text">
+								3 days
+							</div><!-- /.dashboard-col__age-text -->
+						</div><!-- /.dashboard-col__age dashboard-colbody clearfix -->
+						<div class="dashboard-col__incidentType dashboard-colbody clearfix">
+							<div class="dashboard-col__incidentType-text">
+								Workplace Health and Safety Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							</div><!-- /.dashboard-col__incidentType-text -->
+						</div><!-- /.dashboard-col__incidentType dashboard-colbody clearfix -->
+						<div class="dashboard-col__location dashboard-colbody clearfix">
+							<div class="dashboard-col__location-text">
+								Toronto, NY, Canada
+							</div><!-- /.dashboard-col__location-text -->
+						</div><!-- /.dashboard-col__location dashboard-colbody clearfix -->
+						<div class="dashboard-col__reportDate dashboard-colbody clearfix">
+							<div class="dashboard-col__reportDate-text">
+								May 13, 2017
+							</div><!-- /.dashboard-col__reportDate-text -->
+						</div><!-- /.dashboard-col__reportDate dashboard-colbody clearfix -->
+						<div class="dashboard-col__messages dashboard-colbody clearfix">
+							<div class="dashboard-col__messages-text">
+								3
+							</div><!-- /.dashboard-col__messages-text -->
+						</div><!-- /.dashboard-col__messages dashboard-colbody clearfix -->
+						<div class="dashboard-col__tasks dashboard-colbody clearfix">
+							<div class="dashboard-col__tasks-text">
+								1
+							</div><!-- /.dashboard-col__tasks-text -->
+						</div><!-- /.dashboard-col__tasks dashboard-colbody clearfix -->
+						<div class="dashboard-col__team dashboard-colbody clearfix">
+							<ul class="team-list clearfix">
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status online"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								
+							</ul><!-- /.team-list -->
+						</div><!-- /.dashboard-col__team dashboard-colbody clearfix -->
+					</div><!-- /.dashboard-rowbody -->
+
+					<div class="dashboard-rowbody">
+						<div class="rowbody__colorLine colorLine colorLine_lightBlue"></div><!-- /.rowbody__colorLine yellow -->
+						<div class="dashboard-col__case dashboard-colbody clearfix">
+							<div class="dashboard-col__case-text">
+								22778-STA-222
+							</div><!-- /.dashboard-col__case-text -->
+						</div><!-- /.dashboard-col__case dashboard-colbody clearfix -->
+						<div class="dashboard-col__stage dashboard-colbody clearfix">
+							<div class="dashboard-col__stage-type">
+								Investigation
+							</div><!-- /.dashboard-col__stage-type -->
+							<div class="dashboard-col__stage-date dashboard-col__stage-date_red">
+								0 days left
+							</div><!-- /.dashboard-col__stage-date -->
+						</div><!-- /.dashboard-col__stage dashboard-colbody clearfix -->
+						<div class="dashboard-col__age dashboard-colbody clearfix">
+							<div class="dashboard-col__age-text">
+								3 days
+							</div><!-- /.dashboard-col__age-text -->
+						</div><!-- /.dashboard-col__age dashboard-colbody clearfix -->
+						<div class="dashboard-col__incidentType dashboard-colbody clearfix">
+							<div class="dashboard-col__incidentType-text">
+								Workplace Health and Safety 
+							</div><!-- /.dashboard-col__incidentType-text -->
+						</div><!-- /.dashboard-col__incidentType dashboard-colbody clearfix -->
+						<div class="dashboard-col__location dashboard-colbody clearfix">
+							<div class="dashboard-col__location-text">
+								Toronto, NY, Canada
+							</div><!-- /.dashboard-col__location-text -->
+						</div><!-- /.dashboard-col__location dashboard-colbody clearfix -->
+						<div class="dashboard-col__reportDate dashboard-colbody clearfix">
+							<div class="dashboard-col__reportDate-text">
+								May 13, 2017
+							</div><!-- /.dashboard-col__reportDate-text -->
+						</div><!-- /.dashboard-col__reportDate dashboard-colbody clearfix -->
+						<div class="dashboard-col__messages dashboard-colbody clearfix">
+							<div class="dashboard-col__messages-text">
+								33
+							</div><!-- /.dashboard-col__messages-text -->
+						</div><!-- /.dashboard-col__messages dashboard-colbody clearfix -->
+						<div class="dashboard-col__tasks dashboard-colbody clearfix">
+							<div class="dashboard-col__tasks-text">
+								1
+							</div><!-- /.dashboard-col__tasks-text -->
+						</div><!-- /.dashboard-col__tasks dashboard-colbody clearfix -->
+						<div class="dashboard-col__team dashboard-colbody clearfix">
+							<ul class="team-list clearfix">
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status online"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/24_636362867608769531.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status away"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								
+							</ul><!-- /.team-list -->
+						</div><!-- /.dashboard-col__team dashboard-colbody clearfix -->
+					</div><!-- /.dashboard-rowbody -->
+
+					<div class="dashboard-rowbody">
+						<div class="rowbody__colorLine colorLine colorLine_limon"></div><!-- /.rowbody__colorLine yellow -->
+						<div class="dashboard-col__case dashboard-colbody clearfix">
+							<div class="dashboard-col__case-text">
+								22778-STA-222
+							</div><!-- /.dashboard-col__case-text -->
+						</div><!-- /.dashboard-col__case dashboard-colbody clearfix -->
+						<div class="dashboard-col__stage dashboard-colbody clearfix">
+							<div class="dashboard-col__stage-type">
+								Investigation
+							</div><!-- /.dashboard-col__stage-type -->
+							<div class="dashboard-col__stage-date dashboard-col__stage-date_red">
+								0 days left
+							</div><!-- /.dashboard-col__stage-date -->
+						</div><!-- /.dashboard-col__stage dashboard-colbody clearfix -->
+						<div class="dashboard-col__age dashboard-colbody clearfix">
+							<div class="dashboard-col__age-text">
+								3 days
+							</div><!-- /.dashboard-col__age-text -->
+						</div><!-- /.dashboard-col__age dashboard-colbody clearfix -->
+						<div class="dashboard-col__incidentType dashboard-colbody clearfix">
+							<div class="dashboard-col__incidentType-text">
+								Workplace Health and Safety 
+							</div><!-- /.dashboard-col__incidentType-text -->
+						</div><!-- /.dashboard-col__incidentType dashboard-colbody clearfix -->
+						<div class="dashboard-col__location dashboard-colbody clearfix">
+							<div class="dashboard-col__location-text">
+								Toronto, NY, Canada
+							</div><!-- /.dashboard-col__location-text -->
+						</div><!-- /.dashboard-col__location dashboard-colbody clearfix -->
+						<div class="dashboard-col__reportDate dashboard-colbody clearfix">
+							<div class="dashboard-col__reportDate-text">
+								May 13, 2017
+							</div><!-- /.dashboard-col__reportDate-text -->
+						</div><!-- /.dashboard-col__reportDate dashboard-colbody clearfix -->
+						<div class="dashboard-col__messages dashboard-colbody clearfix">
+							<div class="dashboard-col__messages-text">
+								33
+							</div><!-- /.dashboard-col__messages-text -->
+						</div><!-- /.dashboard-col__messages dashboard-colbody clearfix -->
+						<div class="dashboard-col__tasks dashboard-colbody clearfix">
+							<div class="dashboard-col__tasks-text">
+								1
+							</div><!-- /.dashboard-col__tasks-text -->
+						</div><!-- /.dashboard-col__tasks dashboard-colbody clearfix -->
+						<div class="dashboard-col__team dashboard-colbody clearfix">
+							<ul class="team-list clearfix">
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status online"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/24_636362867608769531.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status away"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+
+							</ul><!-- /.team-list -->
+						</div><!-- /.dashboard-col__team dashboard-colbody clearfix -->
+					</div><!-- /.dashboard-rowbody -->
+
+					<div class="dashboard-rowbody">
+						<div class="rowbody__colorLine colorLine colorLine_red"></div><!-- /.rowbody__colorLine yellow -->
+						<div class="dashboard-col__case dashboard-colbody clearfix">
+							<div class="dashboard-col__case-text">
+								22778-STA-222
+							</div><!-- /.dashboard-col__case-text -->
+						</div><!-- /.dashboard-col__case dashboard-colbody clearfix -->
+						<div class="dashboard-col__stage dashboard-colbody clearfix">
+							<div class="dashboard-col__stage-type">
+								New case
+							</div><!-- /.dashboard-col__stage-type -->
+							<div class="dashboard-col__stage-date dashboard-col__stage-date_green">
+								22 days left
+							</div><!-- /.dashboard-col__stage-date -->
+						</div><!-- /.dashboard-col__stage dashboard-colbody clearfix -->
+						<div class="dashboard-col__age dashboard-colbody clearfix">
+							<div class="dashboard-col__age-text">
+								3 days
+							</div><!-- /.dashboard-col__age-text -->
+						</div><!-- /.dashboard-col__age dashboard-colbody clearfix -->
+						<div class="dashboard-col__incidentType dashboard-colbody clearfix">
+							<div class="dashboard-col__incidentType-text">
+								Workplace Health and Safety Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+							</div><!-- /.dashboard-col__incidentType-text -->
+						</div><!-- /.dashboard-col__incidentType dashboard-colbody clearfix -->
+						<div class="dashboard-col__location dashboard-colbody clearfix">
+							<div class="dashboard-col__location-text">
+								Toronto, NY, Canada
+							</div><!-- /.dashboard-col__location-text -->
+						</div><!-- /.dashboard-col__location dashboard-colbody clearfix -->
+						<div class="dashboard-col__reportDate dashboard-colbody clearfix">
+							<div class="dashboard-col__reportDate-text">
+								May 13, 2017
+							</div><!-- /.dashboard-col__reportDate-text -->
+						</div><!-- /.dashboard-col__reportDate dashboard-colbody clearfix -->
+						<div class="dashboard-col__messages dashboard-colbody clearfix">
+							<div class="dashboard-col__messages-text">
+								3
+							</div><!-- /.dashboard-col__messages-text -->
+						</div><!-- /.dashboard-col__messages dashboard-colbody clearfix -->
+						<div class="dashboard-col__tasks dashboard-colbody clearfix">
+							<div class="dashboard-col__tasks-text">
+								1
+							</div><!-- /.dashboard-col__tasks-text -->
+						</div><!-- /.dashboard-col__tasks dashboard-colbody clearfix -->
+						<div class="dashboard-col__team dashboard-colbody clearfix">
+							<ul class="team-list clearfix">
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status online"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								
+							</ul><!-- /.team-list -->
+						</div><!-- /.dashboard-col__team dashboard-colbody clearfix -->
+					</div><!-- /.dashboard-rowbody -->
+
+					<div class="dashboard-rowbody">
+						<div class="rowbody__colorLine colorLine colorLine_dark"></div><!-- /.rowbody__colorLine yellow -->
+						<div class="dashboard-col__case dashboard-colbody clearfix">
+							<div class="dashboard-col__case-text">
+								22778-STA-222
+							</div><!-- /.dashboard-col__case-text -->
+						</div><!-- /.dashboard-col__case dashboard-colbody clearfix -->
+						<div class="dashboard-col__stage dashboard-colbody clearfix">
+							<div class="dashboard-col__stage-type">
+								Investigation
+							</div><!-- /.dashboard-col__stage-type -->
+							<div class="dashboard-col__stage-date dashboard-col__stage-date_red">
+								0 days left
+							</div><!-- /.dashboard-col__stage-date -->
+						</div><!-- /.dashboard-col__stage dashboard-colbody clearfix -->
+						<div class="dashboard-col__age dashboard-colbody clearfix">
+							<div class="dashboard-col__age-text">
+								3 days
+							</div><!-- /.dashboard-col__age-text -->
+						</div><!-- /.dashboard-col__age dashboard-colbody clearfix -->
+						<div class="dashboard-col__incidentType dashboard-colbody clearfix">
+							<div class="dashboard-col__incidentType-text">
+								Workplace Health and Safety 
+							</div><!-- /.dashboard-col__incidentType-text -->
+						</div><!-- /.dashboard-col__incidentType dashboard-colbody clearfix -->
+						<div class="dashboard-col__location dashboard-colbody clearfix">
+							<div class="dashboard-col__location-text">
+								Toronto, NY, Canada
+							</div><!-- /.dashboard-col__location-text -->
+						</div><!-- /.dashboard-col__location dashboard-colbody clearfix -->
+						<div class="dashboard-col__reportDate dashboard-colbody clearfix">
+							<div class="dashboard-col__reportDate-text">
+								May 13, 2017
+							</div><!-- /.dashboard-col__reportDate-text -->
+						</div><!-- /.dashboard-col__reportDate dashboard-colbody clearfix -->
+						<div class="dashboard-col__messages dashboard-colbody clearfix">
+							<div class="dashboard-col__messages-text">
+								33
+							</div><!-- /.dashboard-col__messages-text -->
+						</div><!-- /.dashboard-col__messages dashboard-colbody clearfix -->
+						<div class="dashboard-col__tasks dashboard-colbody clearfix">
+							<div class="dashboard-col__tasks-text">
+								1
+							</div><!-- /.dashboard-col__tasks-text -->
+						</div><!-- /.dashboard-col__tasks dashboard-colbody clearfix -->
+						<div class="dashboard-col__team dashboard-colbody clearfix">
+							<ul class="team-list clearfix">
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/2_636338753935849609.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status online"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								<li class="team-list__li">
+									<a href="#!" class=" team-list__a">
+										<img src="http://report.employeeconfidential.com//Upload//UserLogo/24_636362867608769531.jpg" alt="" class="team-list__logo" />
+										<span class="profile-status away"></span>
+									</a>
+								</li><!-- /.team-list__li -->
+								
+							</ul><!-- /.team-list -->
+						</div><!-- /.dashboard-col__team dashboard-colbody clearfix -->
+					</div><!-- /.dashboard-rowbody -->
+
+				</div><!-- /.dashboard -->
+				<div class="divider p-tb-20"></div><!-- /.divider p-tb-20 -->
+			</div><!-- /.container -->
+		</div>
+
+		<div id="mainTab-CompletedCases" class="mainNavigationTabs__tabContent active">
+			<ul class="companyProfileMenu">
+				<li class="companyProfileMenu__li">
+					<a href="#!" class="companyProfileMenu__a">
+						<!-- Departments -->
+					</a>
+				</li><!-- /.companyProfileMenu__li -->
+				<li class="companyProfileMenu__li"><a href="" class="companyProfileMenu__a"></a></li><!-- /.companyProfileMenu__li -->
+				<li class="companyProfileMenu__li"><a href="" class="companyProfileMenu__a"></a></li><!-- /.companyProfileMenu__li -->
+				<li class="companyProfileMenu__li"><a href="" class="companyProfileMenu__a"></a></li><!-- /.companyProfileMenu__li -->
+				<li class="companyProfileMenu__li"><a href="" class="companyProfileMenu__a"></a></li><!-- /.companyProfileMenu__li -->
+				<li class="companyProfileMenu__li"><a href="" class="companyProfileMenu__a"></a></li><!-- /.companyProfileMenu__li -->
+				<li class="companyProfileMenu__li"><a href="" class="companyProfileMenu__a"></a></li><!-- /.companyProfileMenu__li -->
+			</ul><!-- /.companyProfileMenu -->
+		</div>
+		<div id="mainTab-Spam" class="mainNavigationTabs__tabContent ">
+			Spam
+		</div>
+
+	</div><!-- /.container -->
+
+	<!-- ------------------------ RootCauseAnalysis ---------------------------- -->
+	<div class="container">
+		<div class="row circleGraphRow">
+			<div class="col-4">
+				id="chart1"
+			</div><!-- /.col-4 -->
+			<div class="col-4">
+				id="chart2"
+			</div><!-- /.col-4 -->
+			<div class="col-4">
+				id="chart3"
+			</div><!-- /.col-4 -->
+		</div><!-- /.row -->
+		<div class="row circleGraphInfoRow">
+			<div class="col-4">
+				<div class="graphTitle">
+					Behavioral Factors
+				</div><!-- /.graphTitle -->
+				<div class="ng-scope">
+					44 2
+				</div><!-- /.ng-scope -->
+				<div class="ng-scope">
+					1 5
+				</div><!-- /.ng-scope -->
+				<div class="ng-scope">
+					111 3
+				</div><!-- /.ng-scope -->
+			</div><!-- /.col-4 -->
+			<div class="col-4">
+				<div class="graphTitle">
+					External Influences
+				</div><!-- /.graphTitle -->
+				<div class="ng-scope">
+					44 2
+				</div><!-- /.ng-scope -->
+				<div class="ng-scope">
+					1 5
+				</div><!-- /.ng-scope -->
+				<div class="ng-scope">
+					111 3
+				</div><!-- /.ng-scope -->
+			</div><!-- /.col-4 -->
+			<div class="col-4">
+				<div class="graphTitle">
+					Organizational Influences
+				</div><!-- /.graphTitle -->
+				<div class="ng-scope">
+					88 1
+				</div><!-- /.ng-scope -->
+				<div class="ng-scope">
+					1 5
+				</div><!-- /.ng-scope -->
+				<div class="ng-scope">
+					22 5
+				</div><!-- /.ng-scope -->
+				<div class="ng-scope">
+					111 3
+				</div><!-- /.ng-scope -->
+			</div><!-- /.col-4 -->
+		</div><!-- /.row -->
+	</div><!-- /.container -->
+	<!-- ---------------------------------------------------- -->
+	
+
+
+	<script>
+		$(document).ready(function(){
+
+			$( "a[href$='#']" ).click(function( event ) {
+				event.preventDefault();
+			});
+	
+			$('.mainNavigationTabs__changeTab').click(function(){
+				var tab_id = $(this).attr('data-tab');
+
+				$('.mainNavigationTabs__changeTab').removeClass('active');
+				$('.mainNavigationTabs__tabContent').removeClass('active');
+
+				$(this).addClass('active');
+				$("#"+tab_id).addClass('active');
+			})
+			
+        
+
+		})
+	</script>
+		
+</body>
+
+</html>

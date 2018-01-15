@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://stark.employeeconfidential.com/analytics -->
+<html><head lang="en"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+		
+		<meta name="viewport" content="width=device-width">
+
+		
+		<link rel="stylesheet" type="text/css" href="./Analytics_files/main.css">
+		<link rel="stylesheet" type="text/css" href="./Analytics_files/styleReportDashboard.css">
+		<link rel="stylesheet" type="text/css" href="./Analytics_files/styleTasks.css">
+		<link rel="stylesheet" type="text/css" href="./Analytics_files/stylePageMessages.css">
+		<link rel="stylesheet" href="newCase.css">
+		<link rel="shortcut icon" type="image/x-icon" src="/favicon.ico">
+
+		<link href="./Analytics_files/jquery-ui.css" rel="stylesheet">
+
+		<title>Analytics</title>
+		<!--<link href="styleReportDashboard.min.css" rel="stylesheet">-->
+
+		<script type="text/javascript" async="" id="inspsync" src="http://cdn.inspectlet.com/inspectlet.js"></script><script type="text/javascript" src="./Analytics_files/jquery-1.10.2.min.js.download"></script><style></style>
+		<script type="text/javascript" src="./Analytics_files/jquery-ui.min.js.download"></script>
+
+		<script src="./Analytics_files/reportSummary.js.download"></script>
+
+		<script src="./Analytics_files/angular.min.js.download"></script>
+		<script src="./Analytics_files/angular-http.js.download"></script>
+		<script src="./Analytics_files/angular-resource.min.js.download"></script>
+		<script src="./Analytics_files/angular-animate.min.js.download"></script>
+		
+		<script src="./Analytics_files/d3.min.js.download"></script>
+		<script src="./Analytics_files/nv.d3.min.js.download"></script>
+		<script src="./Analytics_files/angular-nvd3.min.js.download"></script>
+
+		<script src="./Analytics_files/dis.js.download"></script>
+<style type="text/css">/*.lleo_errorSelection *::-moz-selection,
+.lleo_errorSelection *::selection,
+.lleo_errorSelection *::-webkit-selection {
+		background-color: red !important;
+		color: #fff !important;;
+}*/
+
+#lleo_dialog,
+#lleo_dialog * {
+		color: #000 !important;
+		font: normal 13px Arial, Helvetica !important;
+		line-height: 15px !important;
+		margin: 0 !important;
+	padding: 0 !important;
+	background: none !important;
+	border: none 0 !important;
+	position: static !important;
+	vertical-align: baseline !important;
+	overflow: visible !important;
+	width: auto !important;
+	height: auto !important;
+		max-width: none !important;
+		max-height: none !important;
+	float: none !important;
+	visibility: visible !important;
+	text-align: left !important;
+		text-transform: none !important;
+	border-collapse: separate !important;
+	border-spacing: 2px !important;
+		box-sizing: content-box !important;
+		box-shadow: none !important;
+		opacity: 1 !important;
+		text-shadow: none !important;
+		letter-spacing: normal !important;
+		-webkit-filter: none !important;
+		-moz-filter: none !important;
+		filter: none !important;
+}
+#lleo_dialog *:before,
+#lleo_dialog *:after {
+		content: '';
+}
+
+#lleo_dialog iframe {
+	height: 0 !important;
+	width: 0 !important;
+}
+
+#lleo_dialog {
+		position: absolute !important;
+		background: #fff !important;
+		border: solid 1px #ccc !important;
+		padding: 7px 0 0 !important;
+		left: -999px;
+		top: -999px;
+		width: 440px !important;
+		overflow: hidden;
+		display: block !important;
+		z-index: 999999999 !important;
+		box-shadow: 8px 16px 30px rgba(0, 0, 0, 0.16) !important;
+		border-radius: 3px !important;
+		opacity: 0 !important;
+		-webkit-transform: translateY(15px);
+		-moz-transform: translateY(15px);
+		-ms-transform: translateY(15px);
+		-o-transform: translateY(15px);
+		transform: translateY(15px);
+}
+#lleo_dialog.lleo_show_small {
+		width: 150px !important;
+}
+#lleo_dialog.lleo_show {
+		opacity: 1 !important;
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		transform: translateY(0);
+		-webkit-transition: -webkit-transform 0.3s, opacity 0.3s !important;
+		-moz-transition: -moz-transform 0.3s, opacity 0.3s !important;
+		-ms-transition: -ms-transform 0.3s, opacity 0.3s !important;
+		-o-transition: -o-transform 0.3s, opacity 0.3s !important;
+		transition: transform 0.3s, opacity 0.3s !important;
+}
+#lleo_dialog.lleo_collapse {
+		opacity: 0 !important;
+		-webkit-transform: scale(0.25, 0.1) translate(-550px, 100px);
+		-moz-transform: scale(0.25, 0.1) translate(-550px, 100px);
+		-ms-transform: scale(0.25, 0.1) translate(-550px, 100px);
+		-o-transform: scale(0.25, 0.1) translate(-550px, 100px);
+		transform: scale(0.25, 0.1) translate(-550px, 100px);
+		-webkit-transition: -webkit-transform 0.4s, opacity 0.4s !important;
+		-moz-transition: -moz-transform 0.4s, opacity 0.4s !important;
+		-ms-transition: -ms-transform 0.4s, opacity 0.4s !important;
+		-o-transition: -o-transform 0.4s, opacity 0.4s !important;
+		transition: transform 0.4s, opacity 0.4s !important;
+}
+#lleo_dialog input::-webkit-input-placeholder {
+		color: #aaa !important;
+}
+#lleo_dialog .lleo_has_pic #lleo_word {
+	margin-right: 80px !important;
+}
+#lleo_dialog #lleo_translationsContainer1 {
+	position: relative !important;
+}
+#lleo_dialog #lleo_translationsContainer2 {
+	padding: 7px 0 0 !important;
+	vertical-align: middle !important;
+}
+#lleo_dialog #lleo_word {
+		color: #000 !important;
+		margin: 0 5px 2px 0 !important;
+		/*float: left !important;*/
+}
+#lleo_dialog .lleo_has_sound #lleo_word {
+		margin-left: 30px !important;
+}
+#lleo_dialog #lleo_text {
+		font-weight: bold !important;
+		color: #d56e00 !important;
+		text-decoration: none !important;
+		cursor: default !important;
+}
+/*
+#lleo_dialog #lleo_text.lleo_known {
+		cursor: pointer !important;
+		text-decoration: underline !important;
+}
+*/
+/*#lleo_dialog #lleo_closeBtn {
+		position: absolute !important;
+		right: 6px !important;
+		top: 5px !important;
+		line-height: 1px !important;
+		text-decoration: none !important;
+		font-weight: bold !important;
+		font-size: 0 !important;
+		color: #aaa !important;
+		display: block !important;
+	z-index: 9999999999 !important;
+	width: 7px !important;
+	height: 7px !important;
+	padding: 0 !important;
+	margin: 0 !important;
+}*/
+
+#lleo_dialog #lleo_optionsBtn {
+		position: absolute !important; 
+		right: 3px !important;
+		top: 5px !important;
+		line-height: 1px !important;
+		text-decoration: none !important;
+		font-weight: bold !important;
+		font-size: 13px !important;
+		color: #aaa !important;
+		padding: 2px !important;
+	display: none;
+}
+		#lleo_dialog.lleo_optionsShown #lleo_optionsBtn {
+				display: block !important;
+		}
+		#lleo_dialog #lleo_optionsBtn img {
+				width: 12px !important;
+				height: 12px !important;
+		}
+#lleo_dialog #lleo_sound {
+		float: left !important;
+		width: 16px !important;
+		height: 16px !important;
+		margin-left: 9px !important;
+		margin-right: 3px !important;
+		background: 0 0 no-repeat !important;
+		cursor: pointer !important;
+		display: none !important;
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAfNJREFUeNq0U01IVFEU/u57Oo5WhBRIBBptykWLYBa2soWiEKQQEbrSFsGbVRQKQc2iFqGitXqvjQxCoCJCqyI0aBUtZILaJNUuYWYWo8HovJ/707nP94bnz0rxwvfOuefd8517fi5TSuE4i50YwZ3l37ZhNlpgzFkaaM/G9sHF1YskNrT+7l4PjMOcb78t2JL71uxgB+2UlfxHTtq5N94fIOh/88kWgWfl73ZCSQkpeGg3H091JY6dI2S00qA/N3KO3dDUYhFgEmZGurG+w9FqApIHsVM7kaTF9Nhn0r8Q7hPWQgIRuNaH3AMUA4W/Lkdh04cpFS43G0TgxQTvCdMETVAk3KynIHwXZU/ge8XDt7KH9bKLjU0P2zVO5LsEpSejVRJ9UR18EtfqKegovs9R3Q6w9c/H1o4Aa2Jwm1lIvn9RJ4w9RdRRzqcYrpwycCll4Cy1lnkS3Bc6vfBg28v8aRIfI78zhB/1GygROH3jLyyzMQ0zlUZuZBSlKkeLoegGtTjYLcJ8pF+NakHOFC2J6w+f25mxSfWrWFF/ShXVPTGvtN14NNkVnxlYWJkgZEL7/vwKr55lKSVnaGYWkuYgrgG172uUv47+U7fw0EHaJXmalUQy/HqO6lBzEsVjJC4Q8kd6TETQpjuaGOvjv8b/AgwA/ij1XMx58NIAAAAASUVORK5CYII=) !important;
+}
+#lleo_dialog .lleo_has_sound #lleo_sound {
+		display: block !important;
+}
+
+#lleo_dialog #lleo_soundWave {
+		border: solid 5px #4495CC !important;
+		border-radius: 5px !important;
+		position: absolute !important;
+		left: -5px !important;
+		top: -5px !important;
+		right: -5px !important;
+		bottom: -5px !important;
+		z-index: 0 !important;
+		opacity: 0.9 !important;
+		display: none !important;
+}
+		#lleo_dialog #lleo_soundWave.lleo_beforePlaying {
+				display: block !important;
+		}
+		#lleo_dialog #lleo_soundWave.lleo_playing {
+				opacity: 0 !important;
+				border-width: 20px !important;
+				border-radius: 30px !important;
+
+				-webkit-transform: scale(1.07,1.1) !important;
+				-moz-transform: scale(1.07,1.1) !important;
+				-ms-transform: scale(1.07,1.1) !important;
+				transform: scale(1.07,1.1) !important;
+
+				-webkit-transition: all 0.6s !important;
+				-moz-transition: all 0.6s !important;
+				-ms-transition: all 0.6s !important;
+				transition: all 0.6s !important;
+		}
+
+
+#lleo_dialog #lleo_picOuter {
+		position: absolute !important;
+		float: right !important;
+		top: 4px;
+		right: 5px;
+		z-index: 9 !important;
+		display: none !important;
+		width: 100px !important;
+}
+		#lleo_dialog.lleo_optionsShown #lleo_picOuter {
+				right: 25px;
+		}
+#lleo_dialog .lleo_has_pic #lleo_picOuter {
+		display: block !important;
+}
+		#lleo_dialog #lleo_picOuter:hover {
+				width: auto !important;
+				z-index: 11 !important;
+		}
+#lleo_dialog #lleo_pic,
+#lleo_dialog #lleo_picBig {
+		position: absolute !important;
+		top: 0 !important;
+		right: 0 !important;
+		border: solid 2px #fff !important;
+		-webkit-border-radius: 2px !important;
+		-moz-border-radius: 2px !important;
+	border-radius: 2px !important;
+		z-index: 1 !important;
+}
+#lleo_dialog #lleo_pic {
+	position: relative !important;
+		border: none !important;
+	width: 30px !important;
+}
+#lleo_dialog #lleo_picBig {
+		box-shadow: -1px 2px 4px rgba(0,0,0,0.3);
+		z-index: 2 !important;
+		opacity: 0 !important;
+		visibility: hidden !important;
+}
+		#lleo_dialog #lleo_picOuter:hover #lleo_picBig {
+				visibility: visible !important;
+				opacity: 1 !important;
+				-webkit-transition: opacity 0.3s !important;
+				-webkit-transition-delay: 0.3s !important;
+		}
+#lleo_dialog #lleo_transcription {
+		margin: 0 80px 4px 31px !important;
+		color: #aaaaaa !important;
+}
+#lleo_dialog .lleo_no_trans {
+		color: #aaa !important;
+}
+
+#lleo_dialog .ll-translation-counter {
+	float: right !important;
+		font-size: 11px !important;
+		color: #aaa !important;
+		padding: 2px 2px 1px 10px !important;
+}
+
+#lleo_dialog .ll-translation-text {
+	float: left !important;
+	/*width: 80% !important;*/
+}
+
+#lleo_dialog #lleo_trans a {
+		color: #3F669F !important;
+		text-decoration: none !important;
+		text-overflow: ellipsis !important;
+		padding: 1px 4px !important;
+		overflow: hidden !important;
+		float: left !important;
+		width: 320px !important;
+}
+
+#lleo_dialog .ll-translation-item {
+		color: #3F669F !important;
+		border: solid 1px #fff !important;
+		padding: 3px !important;
+		width: 100% !important;
+		float: left !important;
+	-moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+}
+
+#lleo_dialog .ll-translation-item:hover {
+	border: solid 1px #9FC2C9 !important;
+		background: #EDF4F6 !important;
+	cursor: pointer !important;
+}
+#lleo_dialog .ll-translation-item:hover .ll-translation-counter {
+	color: #83a0a6 !important;
+}
+
+#lleo_dialog .ll-translation-marker {
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAWSURBVBhXY7RPm/+fAQkwIXNAbMICAJQ8AkvqWg/SAAAAAElFTkSuQmCC) !important;
+		display: inline-block !important;
+		width: 4px !important;
+		height: 4px !important;
+		margin: 7px 5px 2px 2px !important;
+		float: left !important;
+}
+
+#lleo_dialog #lleo_icons {
+		color: #aaa !important;
+		font-size: 11px !important;
+		background: #f8f8f8 !important;
+		padding: 10px 10px 10px 16px !important;
+}
+#lleo_icons a {
+		display: inline-block !important;
+		width: 16px !important;
+		height: 16px !important;
+		margin: 0 10px -4px 3px !important;
+		text-decoration: none !important;
+		opacity: 0.5 !important;
+		background: url(data:image/png;base64,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) !important;
+}
+#lleo_icons a:hover {
+		opacity: 1 !important;
+}
+#lleo_icons a.lleo_google     {background-position:-34px 0 !important;}
+#lleo_icons a.lleo_multitran  {background-position:-64px 0 !important;}
+#lleo_icons a.lleo_lingvo     {background-position:-51px 0 !important; width: 12px !important;}
+#lleo_icons a.lleo_dict       {background-position:-17px 0 !important;}
+#lleo_icons a.lleo_linguee    {background-position:-81px 0 !important;}
+#lleo_icons a.lleo_michaelis  {background-position:-98px 0 !important;}
+
+#lleo_dialog #lleo_contextContainer {
+		margin: 0 !important;
+		padding: 3px 15px 8px 10px !important;
+		background: #eee !important;
+		background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee)) !important;
+		background: -moz-linear-gradient(-90deg, #fff, #eee) !important;
+		border-bottom: solid 1px #ddd !important;
+		border-top-left-radius: 3px !important;
+		border-top-right-radius: 3px !important;
+		display: none !important;
+		overflow: hidden !important;
+}
+#lleo_dialog .lleo_has_context #lleo_contextContainer {
+		display: block !important;
+}
+#lleo_dialog #lleo_context {
+		color: #444 !important;
+		text-shadow: 1px 1px 0 #f4f4f4 !important;
+		line-height: 12px !important;
+		font-size: 11px !important;
+		margin-left: 2px !important;
+}
+#lleo_dialog #lleo_context b {
+		line-height: 12px !important;
+		color: #000 !important;
+		font-weight: bold !important;
+		font-size: 11px !important;
+}
+/*#lleo_dialog #lleo_gBrand {
+		color: #aaa !important;
+		font-size: 10px !important;
+		*//*padding-right: 52px !important;*//*
+		padding-bottom: 14px !important;
+		margin: -3px 4px 0 4px !important;
+		background: left bottom url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAPCAYAAABJGff8AAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAcVSURBVHja3FZrbFTHFT4z97W++/KatfHGNrFjMNjFLQ24iiVIFBzCD1SFqj/aRlCUCvjRKlVatUFJVJJGNKUtoRVqgZZWKWCVOEqKQxsaUoypaWzclNgGI9sLtndZv9beh/d133ems3ZAvKTGkfqnZ3U1d++9M+d88535zkGUUsjbpl/PgixiEEz05aHLIzsjo9cwIrrEy4EA7ypLm8rMAX2q850cYGMtmoD3tKOgYwF0QDAUjcFwwoLG33ih5hkZIJwFGjMA8QDRaQuCIzb0ZtbCMe00oCRbwUIwU7EHwo4jYFs6VASWPb3cv+yP7SfO9RCNNFIByLMpB+ybKIRoLgeXZhKweYrAfzP+1h3CABY90n/unafCwSs/xJK7BfMOzVZjq2w92WJlbhyzLeWSyXuCTXgMOKDsh2Dhlp9HoF57DdzTX4H4kteh5iHtzcRo8ph9XQ+DwZFGJME+RQYq5b/99HYLjNch7gi2t35roOONNQX+mh4kF7GnGDjnA70sgCe0eG+tIlcGX3F0wwtSN+gqBwJGvEXBumdVti9ImB/vNcT2DQHBGriMBkh17QZH7dFCgetBbIcywOa9Cm4QecSYx3dsV3Nz8x3Ytm7dio4fP063bNmC4HZ3BWrqpyN950d5qaDHVqeA2gZw8mLgRA9YBCKGDR+8zF2E3eg8AOdoCFuo+YpitswiboAFtwvNb/qcaTmy5+qg3XwjQi7YBLUjBCXsmmMSIbrZUJKHBWr2muZYRyo0vSfWV+YkyMx/YTTZPDyBCh68QeAP/ap5WuX4fobrsZvB3z7mgdyXmeRUvEjTjE5O8gIlBmDRC2LRKigp8QClOSguRfCj0PcZatejHYb455ORxPZaEf5azaOXRET3ahQWUQk9r+fMjgOHVFvg6FN11dhbGYB+SuBaVud8HhHvGx88tT6RMp6JzXxhmZ6OrqfGwC98KyZT0excfPqLgs8R5jwdhyMTr22Q8W+9Dn4kTLi/s3fi3RzfZOa2hJi3gZCKBLnIxzmK2Mb7GRgPEGqBIIpQXl4OevVGeEt+EqDI/7v3QxPaoGa38hxn1RRwP17sdk/lOP67KpiPDX6YXXuxj758I4rSdVUQKSuGnU4ZPMkk3u3Skjsmr3V/bKszPQW+qiZPcSWxcvHtlpJJ2wyLm6DMGm9g54V4ungltj+u9chHuhRytU0hz88Rz8Qqn1J3j/cwkzF4Q3AvedhWoiyneeCdFWy2hU1d28YU5nFJkMUDeN17681gqUPJqH6OvRYlKA34wXR5O1EytDkXy2xi5wgFSpDM0p2RiMBVAmcWpYAmppOrr03FbVxY2+T2+WFJpQ/S4YgWSV8PIsEp2jr7HsAmNl7m0BVp2rbrT0TTb4YNu83xKXXmFjPsjJzmPVUyO/B7BV8dcAV+luGUnwr1jWcS0Wh8bORryvC7Femh/qElmCwu5ZHopDZjTgC5QMJjBNRYkrQWOimw1Pp6KdMP4mCIy0QlqWM6Ebp+fna8+3uUcwcKS1e0SJA7ef1fred8n1NfKFwqFCMm12lKudDw8PulShbnCC0ux7TtG4US7PDghYGxlcltQEiMd5bt4pyB/VhwA5aKDW9p/QfVdStPg5mBYZ1a/0yYO/xg05US6lhOdNlOxus+ikw29s5mfjadQJ1ZBf5dXQFbH6lHG3wcOIwkPnyqjUYsPXvI70dviCKDL8o0MtS/WbeLXi1cvdrSxLTTMgykPcDV/bwq027o6vgKgdtbJ6L9tRK31oXhyQVJM2MmTW2tiuiJvyB1+jvUSD+NJX+fDtLkR13dZZNXT13NYv5iO//g5U1a/7o4gV8FLTgRiqu5M+nULpuQoyYTpFSWNiTT8HtVh59Ajx0cGNazlwfg8/rqXyqLH9pW4ghNfns2HiWZWNx2V6zqivWHvho50zKk902eRYQzTnwRL60ds2r8YfLuoE2+KepGk0DooYaFgMnrP9PNLLXVx830iGzMXGpkuexVxMKJuGUErVQkgbAEBpkTlc4khS/N6hREU2PPWIlAedllVLNLN2H7xAyFmQSBVAbBbP1+sKufexRGPzw52vW34xZFe4Cil6TihzshLv4JTq5zEmfrBjYTwMRAWFQKhQ1X9HzRNKFeRAsrmncUNcQrFKG2ucrAOgOOF8BmopCvI+iTYpLPT475EBgCfJevPCieoyCxIxP2vQIZx7MQ0FKv9/VdELRc/DlP5UZwuIqgYNHSjYmBtzvpoOqSXI9k9eWd833FnJ/82vPx4IV2APcDBZ+pXflkYUxhXK+BsxOb2L8eiFLrHyq3ZI1nacNBuaT+oNPBs7oZfdFIDbeAhLOcUQZcrhwIGv3Mfnn4H1k+HMVwQTY1zdoelj6U/MA2ZmcBcVu0xOAazUiMqTN9Z3U1cRALMiBbuF9dXJjPm13z/4P9R4ABANu4bb16FOo4AAAAAElFTkSuQmCC) no-repeat !important;
+		display: inline-block !important;
+		float: right !important;
+}
+#lleo_dialog #lleo_gBrand.hidden {
+		display: none !important;
+}*/
+#lleo_dialog #lleo_translateContextLink {
+		color: #444 !important;
+		text-shadow: 1px 1px 0 #f4f4f4 !important;
+		background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#ddd)) !important;
+		background: -moz-linear-gradient(-90deg, #f4f4f4, #ddd) !important;
+		border: solid 1px !important;
+		box-shadow: 1px 1px 0 #f6f6f6 !important;
+		border-color: #999 #aaa #aaa #999 !important;
+		-moz-border-radius: 2px !important;
+	-webkit-border-radius: 2px !important;
+	border-radius: 2px !important;
+		padding: 0 3px !important;
+		font-size: 11px !important;
+		text-decoration: none !important;
+		margin: 1px 5px 0 !important;
+		display: inline-block !important;
+		white-space: nowrap !important;
+}
+#lleo_dialog #lleo_translateContextLink:hover {
+		background: #f8f8f8 !important;
+}
+#lleo_dialog #lleo_translateContextLink.hidden {
+		visibility: hidden !important;
+}
+
+#lleo_dialog #lleo_setTransForm {
+		display: block !important;
+		margin-top: 3px !important;
+		padding-top: 5px !important;
+		/* Set position and background because the form might be overlapped by an image when no translations */
+		position: relative !important;
+		background: #fff !important;
+		z-index: 10 !important;
+		padding-bottom: 10px !important;
+		padding-left: 16px !important;
+}
+#lleo_dialog .lleo-custom-translation {
+		padding: 4px 5px !important;
+		border: solid 1px #ddd !important;
+	border-radius: 2px !important;
+		width: 90% !important;
+		min-width: 270px !important;
+		background: -webkit-gradient(linear, 0 0, 0 20, from(#f1f1f1), to(#fff)) !important;
+		background: -moz-linear-gradient(-90deg, #f1f1f1, #fff) !important;
+	font: normal 13px Arial, Helvetica !important;
+	line-height: 15px !important;
+}
+#lleo_dialog .lleo-custom-translation:hover {
+		border: solid 1px #aaa !important;
+}
+#lleo_dialog .lleo-custom-translation:focus {
+		background: #FFFEC9 !important;
+}
+
+#lleo_dialog *.hidden {
+		display: none !important;
+}
+
+#lleo_dialog .infinitive{
+		color: #D56E00 !important;
+		text-decoration: none;
+		border-bottom: 1px dotted #D56E00 !important;
+}
+#lleo_dialog .infinitive:hover{
+		border: none !important;
+}
+
+#lleo_dialog .lleo_separator {
+		height: 1px !important;
+		background: #eee;
+		margin-top: 10px !important;
+		background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,#eee 8%,rgba(255,255,255,1) 80%) !important;
+		background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, #eee 8%, rgba(255,255,255,1) 80%) !important;
+		background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%,#eee 8%,rgba(255,255,255,1) 80%) !important;
+		background: linear-gradient(to right, rgba(255,255,255,1) 0%,#eee 8%,rgba(255,255,255,1) 80%) !important;
+}
+#lleo_dialog #lleo_trans {
+		/*border-top: 1px solid #eeeeee !important;*/
+		padding: 5px 30px 0 14px !important;
+		zoom: 1;
+}
+
+#lleo_dialog .lleo_clearfix {
+	display: block !important;
+	clear: both !important;
+	visibility: hidden !important;
+	height: 0 !important;
+	font-size: 0 !important;
+}
+
+
+#lleo_dialog #lleo_picOuter table {
+		width: 44px !important;
+		position: absolute !important;
+		right: 0 !important;
+		top: 0 !important;
+		vertical-align: middle !important;
+}
+
+#lleo_dialog #lleo_picOuter td {
+		width: 38px !important;
+		height: 38px !important;
+		/*border: 1px solid #eeeeee !important;*/
+		vertical-align: middle !important;
+		text-align: center !important;
+}
+
+#lleo_dialog #lleo_picOuter td div {
+	height: 38px !important;
+	overflow: hidden !important;
+}
+
+#lleo_dialog .lleo_empty {
+		margin: 0 5px 7px !important;
+}
+
+#lleo_youtubeExportBtn {
+		margin-left: 10px;
+		height: 24px;
+}
+		#lleo_youtubeExportBtn i {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background: 0 0 url(https://d144fqpiyasmrr.cloudfront.net/plugins/all/images/i16.png) !important;
+		}
+		#lleo_youtubeExportBtn .yt-uix-button-content {
+				font-size: 12px;
+				line-height: 2px;
+		}
+
+
+/*** Parsed Lyrics Content *****************************/
+
+.lleo_lyrics tran {
+		background: transparent !important;
+		border-radius: 2px !important;
+		text-shadow: none !important;
+		cursor: pointer !important;
+}
+		.lleo_lyrics tran:hover {
+				color: #fff !important;
+				background: #C77213 !important;
+				-webkit-transition: all 0.1s !important;
+				-moz-transition: all 0.1s !important;
+				-ms-transition: all 0.1s !important;
+				-o-transition: all 0.1s !important;
+				transition: all 0.1s !important;
+		}
+
+.lleo_songName {
+		border: solid 1px #ffd47c;
+		background: #fff1c2;
+		border-radius: 2px;
+}
+
+.lleo_hidden_iframe {
+		visibility: hidden;
+}</style></head>
+<body ng-app="EC" style="" class="ng-scope">
+		<!-- Begin Inspectlet Embed Code -->
+		<script type="text/javascript" id="inspectletjs">
+				window.__insp = window.__insp || [];
+				__insp.push(['wid', 467767562]);
+				(function() {
+						function ldinsp(){if(typeof window.__inspld != "undefined") return; window.__inspld = 1; var insp = document.createElement('script'); insp.type = 'text/javascript'; insp.async = true; insp.id = "inspsync"; insp.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://cdn.inspectlet.com/inspectlet.js'; var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(insp, x); };
+						setTimeout(ldinsp, 500); document.readyState != "complete" ? (window.attachEvent ? window.attachEvent('onload', ldinsp) : window.addEventListener('load', ldinsp, false)) : ldinsp();
+				})();
+		</script>
+		<!-- End Inspectlet Embed Code -->
+		<input type="hidden" id="_report_id" value="0" autocomplete="off">
+		<input type="hidden" id="user_id" value="2" autocomplete="off">
+
+		<input type="hidden" id="" value="" autocomplete="off">
+
+		<div id="header" class="header">
+				<div class="positionLogo">
+						<a href="http://stark.employeeconfidential.com/cases">
+								<div class="blueLogo"></div>
+						</a>
+				</div>
+				<div class="headerPadding">
+
+						<div class="position active">
+								<a href="http://stark.employeeconfidential.com/analytics/Index">
+										<div class="centerPostition">
+												<div class="positionIconStatistic">
+														<div id="iconStatistic"></div>
+												</div>
+												<span class="textHeader">Analytics</span>
+										</div>
+								</a>
+						</div><!-- end positionStatistic -->
+
+						<div class="position ">
+								<a href="http://stark.employeeconfidential.com/tasks/Index">
+										<div class="centerPostition">
+												<div class="positionIconTasks">
+														<div id="iconTasks"></div>
+												</div>
+												<span class="textHeader">Tasks</span>
+										</div>
+								</a>
+						</div><!-- end positionStatistic -->
+
+						<div class="positionSpecial ">
+								<a href="http://stark.employeeconfidential.com/messages/Index">
+										<div class="centerPostition">
+												<div class="positionIconMessages">
+														<div id="iconMessages"></div>
+												</div>
+
+												<div class="floatLeft">
+														<span class="textHeader">Messages</span>
+																<span class="badge">15</span>
+												</div>
+										</div>
+								</a>
+						</div><!-- end positionStatistic -->
+
+						<div class="position ">
+								<a href="http://stark.employeeconfidential.com/cases/Index">
+										<div class="centerPostition">
+												<div class="positionIconCases">
+														<div id="iconCases"></div>
+												</div>
+												<span class="textHeader">Dashboard</span>
+														<span class="badge">67</span>
+										</div><!-- end centerPostition -->
+								</a>
+						</div><!-- end positionStatistic -->
+				</div><!-- end headerPadding -->
+
+				<div class="leftLogo">
+						<div class="leftLogoBorder" style=""></div>
+						<div class="aui-header onclick-menu" tabindex="0">
+								<div class="centerBlock">
+												<img class="secondLogo" src="./Analytics_files/2_636338753935849609.jpg">
+										<ul class="onclick-menu-content">
+												<li>
+														<a href="http://stark.employeeconfidential.com/settings/index/">Settings</a>
+														<!--<button>Settings</button>-->
+												</li>
+												<li>
+														<a href="http://stark.employeeconfidential.com/settings/password/">Password</a>
+														<!--<button>Settings</button>-->
+												</li>
+												<li>
+												<a href="http://stark.employeeconfidential.com/Payment/History">Subscription</a>
+												</li>
+												<li>
+														<form action="http://stark.employeeconfidential.com/Base/Logout" class="ng-pristine ng-valid">
+																<button>Logout</button>
+														</form>
+												</li>
+										</ul>
+								</div>
+								<div class="triangles"></div>
+						</div>
+
+				</div><!--end LeftLogo-->
+		</div><!-- end header -->
+		<div class="menuCasesBlock">
+				<div class="headerBlockTextLeft">
+
+						
+						<a href="http://stark.employeeconfidential.com/analytics/index">
+								<span class="labelCases">Analytics</span>
+						</a>
+						<span class="labelArrow">&gt;</span>
+
+
+				</div>
+
+
+						<link rel="stylesheet" href="./Analytics_files/styleAnalitics.css">
+
+
+
+
+<!-- Include Date Range Picker -->
+<script src="./Analytics_files/moment.min.js.download"></script>
+<script src="./Analytics_files/jquery.daterangepicker.min.js.download"></script>
+<link rel="stylesheet" href="./Analytics_files/nv.d3.min.css">
+
+<link href="./Analytics_files/daterangepickerAnalit.css" rel="stylesheet">
+
+<input type="hidden" id="companyId" value="2" autocomplete="off">
+<input type="hidden" id="user_id" value="2" autocomplete="off">
+<input type="hidden" id="dateStart" value="" autocomplete="off">
+<input type="hidden" id="dateEnd" value="" autocomplete="off">
+
+<input type="hidden" id="step1_delay" value="1" autocomplete="off">
+<input type="hidden" id="step2_delay" value="3" autocomplete="off">
+<input type="hidden" id="step3_delay" value="2" autocomplete="off">
+<input type="hidden" id="step4_delay" value="3" autocomplete="off">
+
+<style>
+		#menu a {
+				max-width: 500px;
+		}
+</style>
+
+<div class="blockSettings blockAnalitics">
+		<div id="casesHeared">
+				<div id="menu">
+						<h2 class="mainTitle">Menu:</h2>
+						<div>
+								<a href="http://stark.employeeconfidential.com/analytics" class="caseesTab active">Cases</a>
+								<a href="http://stark.employeeconfidential.com/analytics/CACSReport" class="caseesTab">Clery Act Crime Statistics Report</a>
+						</div>
+				</div>
+				
+		</div><!--casesHeared-->
+		<!--work-->
+		<!-- -------------------------------------------------------------------- -->
+		<div class="dropDownMenuRow">
+			<div class="container">
+				<div class="parentClass">
+					<div class="menuItem">
+							<div class="positionText">
+									<span class="dropMenuText">Department</span>
+									<img src="./Analytics_files/arrowSelect.png">
+							</div>
+							<ul class="menuUl">
+													<li>
+															<div class="liItem" value="213" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Accounting
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="209" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			R&amp;D
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="208,211,610,611,612,617,619,620,621,622,623,624,625,626,629,631,632,633,639,640,641,649,650,654,655,662,665,670,671,762" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Sales
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="615,616,627,628,630,634,635,636,637,638,656,657,673,721,722,737,738,739,747,749,750,772,778,786,787,788,795,796,803,812,813" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Marketing
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="642,648,748,779,780,781,782,783,784,785,793,794,814" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Human Resources
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="210,609,663" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Finance
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="209,211" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Production
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="212" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Human Resources
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="213" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Customer Service
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="215,217" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Research and Development
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="748" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Administrative
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="778" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			This is test departments
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="210,214,215,216" namedropdown="ReportsDepartmentIDStringss">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Not Listed
+																	</span>
+															</div>
+													</li>
+							</ul>
+					</div>
+				</div>
+				<div class="parentClass">
+					<div class="menuItem">
+							<div class="positionText">
+									<span class="dropMenuText">Location</span>
+									<img src="./Analytics_files/arrowSelect.png">
+							</div>
+							<ul class="menuUl">
+													<li>
+															<div class="liItem" value="208,609,610,615,616,617,619,620,621,622,623,624,625,626,629,630,632,633,634,635,636,637,638,639,640,642,647,654,655,665,670,671,673,721,722,737,738,739,747,748,762,772,779,785,786,788,793,794,795,796,803,812" namedropdown="ReportsLocationIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Stark Tower, NY
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="209,217,627,628,631,641,656,657,749,750,778,780,781,782,784,787,813" namedropdown="ReportsLocationIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Toronto, ON, Canada
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="210,611,612,783,814" namedropdown="ReportsLocationIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			London, UK
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="211,662" namedropdown="ReportsLocationIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Miami, FL, United States
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="212,648,649,650" namedropdown="ReportsLocationIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Palo Alto, CA, United States
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="663" namedropdown="ReportsLocationIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			washington dc
+																	</span>
+															</div>
+													</li>
+							</ul>
+					</div>
+			</div>
+			<div class="parentClass">
+					<div class="menuItem">
+							<div class="positionText">
+									<span class="dropMenuText">Incident Type</span>
+									<img src="./Analytics_files/arrowSelect.png">
+							</div>
+							<ul class="menuUl">
+													<li>
+															<div class="liItem" value="208,609,778,211,623,625,640,654,655,656,657,665,670,673,762,772,779,781,786,794,795,796,803,812,813,814" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Financial Reporting and Accounting
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="209" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Accounting1
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="610" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			BreachofLegalObligations
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="611,612" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			FinancialReportingAccountingIrregularity
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="617,778" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Conflict of Interest
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="642" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Harrassment
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="778,215,615,616,620,626,627,630" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Criminal Activity
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="778" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Harassment and/or Discrimination
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="778" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Alcohol and drug abuse
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="748,210,213,622,638,641,647,671,750,780,783" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Breach of Legal Obligations
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="778,772,619,621,624,628,629,631" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			discrimination
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="214" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Fraud and Embezzlement
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="216" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Workplace Health and Safety
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="212" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			Personal
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="632,633,634,635,636,637,639,648,649,650,663,782,784,785" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			fraud and embezzelment
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="787" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			safety
+																	</span>
+															</div>
+													</li>
+													<li>
+															<div class="liItem" value="662,788" namedropdown="ReportsSecondaryTypesIDStrings">
+																	<div class="checked">
+																			<img class="logo" src="./Analytics_files/check.png">
+																	</div>
+																	<span class="positionText liText">
+																			financial
+																	</span>
+															</div>
+													</li>
+							</ul>
+					</div>
+			</div>
+			<div class="parentClass">
+							<div class="menuItem">
+									<div class="positionText">
+											<span class="dropMenuText">Reporter Type</span>
+											<img src="./Analytics_files/arrowSelect.png">
+									</div>
+									<ul class="menuUl">
+															<li>
+																	<div class="liItem" value="211,212" namedropdown="ReportsRelationTypesIDStrings">
+																			<div class="checked">
+																				<img class="logo" src="./Analytics_files/check.png">
+																			</div>
+																			<span class="positionText liText">
+																					Union Member
+																			</span>
+																	</div>
+															</li>
+															<li>
+																	<div class="liItem" value="208,210,215,615,616,617,619,621,622,623,624,625,626,627,628,629,630,631,632,633,634,635,636,637,638,640,641,642,647,648,649,650,654,655,656,657,662,665,670,671,673,762,772,778,779,780,781,783,784,786,787,788,794,795,796,803,812,813,814" namedropdown="ReportsRelationTypesIDStrings">
+																			<div class="checked">
+																				<img class="logo" src="./Analytics_files/check.png">
+																			</div>
+																			<span class="positionText liText">
+																					Employee
+																			</span>
+																	</div>
+															</li>
+															<li>
+																	<div class="liItem" value="209,216" namedropdown="ReportsRelationTypesIDStrings">
+																			<div class="checked">
+																				<img class="logo" src="./Analytics_files/check.png">
+																			</div>
+																			<span class="positionText liText">
+																					Former employee
+																			</span>
+																	</div>
+															</li>
+															<li>
+																	<div class="liItem" value="213,620,639" namedropdown="ReportsRelationTypesIDStrings">
+																			<div class="checked">
+																				<img class="logo" src="./Analytics_files/check.png">
+																			</div>
+																			<span class="positionText liText">
+																					Contractor
+																			</span>
+																	</div>
+															</li>
+															<li>
+																	<div class="liItem" value="214" namedropdown="ReportsRelationTypesIDStrings">
+																			<div class="checked">
+																				<img class="logo" src="./Analytics_files/check.png">
+																			</div>
+																			<span class="positionText liText">
+																					Customer
+																			</span>
+																	</div>
+															</li>
+															<li>
+																	<div class="liItem" value="750,785" namedropdown="ReportsRelationTypesIDStrings">
+																			<div class="checked">
+																				<img class="logo" src="./Analytics_files/check.png">
+																			</div>
+																			<span class="positionText liText">
+																					Member of the public
+																			</span>
+																	</div>
+															</li>
+															<li>
+																	<div class="liItem" value="663,782" namedropdown="ReportsRelationTypesIDStrings">
+																			<div class="checked">
+																				<img class="logo" src="./Analytics_files/check.png">
+																			</div>
+																			<span class="positionText liText">
+																					p/t employee
+																			</span>
+																	</div>
+															</li>
+									</ul>
+							</div>
+					</div>
+					<div class="daterange menuItem">
+							<div class="positionText">
+									<span class="dropMenuText">Date range</span>
+									<img src="./Analytics_files/arrowSelect.png">
+							</div>
+					</div>
+					<input id="daterange" type="text" style="display: none;" name="daterange" value="01/01/2015 - 01/31/2015">
+			</div><!-- /.container -->
+		</div><!-- /.dropDownMenuRow -->
+
+		<!--end work-->
+		<div class="borderAnalit">
+			<div class="container">
+				<div class="filter">
+						<table>
+								<tbody><tr>
+										<td class="filterUp">Search:</td>
+										<td>
+												<table id="filterTable"></table>
+										</td>
+								</tr>
+						</tbody></table>
+				</div>
+			</div><!-- /.container -->
+				
+				<!-- ------------------------------------------------ -->
+
+				<div class="container">
+				<div class="contentSettings contentActivity">
+						<!-- 1 All cases -->
+						<div class="blockAllCases">
+								<div class="headerBlockActivity">
+										<div class="titleBlock">All cases</div>
+												<div class="itemLegend">
+														<div class="miniSquare" style="background-color: #D6F9F6;"></div>
+														<span>New Report</span>
+												</div>
+												<div class="itemLegend">
+														<div class="miniSquare" style="background-color: #c0ece8;"></div>
+														<span>New Case</span>
+												</div>
+												<div class="itemLegend">
+														<div class="miniSquare" style="background-color: #82dad0;"></div>
+														<span>Under Investigation</span>
+												</div>
+												<div class="itemLegend">
+														<div class="miniSquare" style="background-color: #44c8b9;"></div>
+														<span>Resolution</span>
+												</div>
+												<div class="itemLegend">
+														<div class="miniSquare" style="background-color: #44c8b9;"></div>
+														<span>Awaiting Sign-Off</span>
+												</div>
+												<div class="itemLegend">
+														<div class="miniSquare" style="background-color: #e5eeee;"></div>
+														<span>Closed</span>
+												</div>
+								</div>
+
+								<div id="chartContainer"><svg width="1190" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" stroke="none" stroke-width="0" fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><defs><clippath id="DevExpress_3"><rect x="0" y="0" width="1190" height="400" rx="0" ry="0" fill="none" stroke="none" stroke-width="0"></rect></clippath><clippath id="DevExpress_4"><rect x="24" y="6" width="1160" height="367" rx="0" ry="0" fill="none" stroke="none" stroke-width="0"></rect></clippath><clippath id="DevExpress_5"><rect x="18" y="0" width="1172" height="379" rx="0" ry="0" fill="none" stroke="none" stroke-width="0"></rect></clippath><pattern id="DevExpressPattern_13" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#eaffff" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#eaffff" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#eaffff" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_14" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#d4fffc" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#d4fffc" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#d4fffc" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_15" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#96eee4" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#96eee4" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#96eee4" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_16" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#58dccd" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#58dccd" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#58dccd" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_17" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#19c9b6" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#19c9b6" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#19c9b6" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_18" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#f9ffff" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#f9ffff" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#f9ffff" d="M 0 6 L 6 0"></path></pattern></defs><g class="axis-strips"><g class="h-strips"></g><g class="v-strips"></g></g><g class="h-axis"><g class="axis-elements"><text x="113" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="113" dy="0">February</tspan></text><text x="202" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="202" dy="0">March</tspan></text><text x="292" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="292" dy="0">April</tspan></text><text x="381" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="381" dy="0">May</tspan></text><text x="470" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="470" dy="0">June</tspan></text><text x="559" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="559" dy="0">July</tspan></text><text x="649" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="649" dy="0">August</tspan></text><text x="738" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="738" dy="0">September</tspan></text><text x="827" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="827" dy="0">October</tspan></text><text x="916" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="916" dy="0">November</tspan></text><text x="1006" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="1006" dy="0">December</tspan></text><text x="1095" y="397" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="1095" dy="0">January</tspan></text><text x="1184" y="766" text-anchor="middle" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="1184" dy="0"> </tspan></text></g><g class="axis-grid"></g><g class="axis-line"></g></g><g class="v-axis"><g class="axis-elements"><text x="14" y="378" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">0</tspan></text><text x="14" y="335" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">10</tspan></text><text x="14" y="293" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">20</tspan></text><text x="14" y="250" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">30</tspan></text><text x="14" y="207" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">40</tspan></text><text x="14" y="165" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">50</tspan></text><text x="14" y="122" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">60</tspan></text><text x="14" y="79" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">70</tspan></text><text x="14" y="37" text-anchor="end" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;"><tspan x="14" dy="0">80</tspan></text></g><g class="axis-grid"><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 373.5 L 1184 373.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 330.5 L 1184 330.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 288.5 L 1184 288.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 245.5 L 1184 245.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 202.5 L 1184 202.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 160.5 L 1184 160.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 117.5 L 1184 117.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 74.5 L 1184 74.5"></path><path stroke-width="1" stroke="#808080" stroke-opacity="0.35" d="M 24 32.5 L 1184 32.5"></path></g><g class="axis-line"></g></g><g class="dxBorder"></g><g class="series-container"><g class="series"><g class="series-elements" clip-path="url(#DevExpress_4)"><path fill="#D6F9F6" stroke="none" stroke-width="0" opacity="0.5" states="[object Object]" d="M 24 373 L 113 15 L 202 15 L 292 19 L 381 23 L 470 27 L 559 27 L 649 15 L 738 32 L 827 40 L 916 27 L 1006 6 L 1095 57 L 1184 79 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path></g><g class="series-markers" stroke-width="0" stroke="none" fill="#d6f9f6" r="6" inh="true" clip-path="url(#DevExpress_5)"></g></g><g class="series"><g class="series-elements" clip-path="url(#DevExpress_4)"><path fill="#c0ece8" stroke="none" stroke-width="0" opacity="0.5" states="[object Object]" d="M 24 373 L 113 373 L 202 373 L 292 373 L 381 373 L 470 373 L 559 373 L 649 373 L 738 373 L 827 373 L 916 373 L 1006 373 L 1095 373 L 1184 373 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path></g><g class="series-markers" stroke-width="0" stroke="none" fill="#c0ece8" r="6" inh="true" clip-path="url(#DevExpress_5)"></g></g><g class="series"><g class="series-elements" clip-path="url(#DevExpress_4)"><path fill="#82dad0" stroke="none" stroke-width="0" opacity="0.5" states="[object Object]" d="M 24 373 L 113 292 L 202 292 L 292 288 L 381 283 L 470 279 L 559 326 L 649 326 L 738 305 L 827 296 L 916 292 L 1006 292 L 1095 249 L 1184 228 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path></g><g class="series-markers" stroke-width="0" stroke="none" fill="#82dad0" r="6" inh="true" clip-path="url(#DevExpress_5)"></g></g><g class="series"><g class="series-elements" clip-path="url(#DevExpress_4)"><path fill="#44c8b9" stroke="none" stroke-width="0" opacity="0.5" states="[object Object]" d="M 24 373 L 113 330 L 202 330 L 292 330 L 381 330 L 470 330 L 559 322 L 649 318 L 738 318 L 827 318 L 916 318 L 1006 318 L 1095 309 L 1184 309 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path></g><g class="series-markers" stroke-width="0" stroke="none" fill="#44c8b9" r="6" inh="true" clip-path="url(#DevExpress_5)"></g></g><g class="series"><g class="series-elements" clip-path="url(#DevExpress_4)"><path fill="#05b5a2" stroke="none" stroke-width="0" opacity="0.5" states="[object Object]" d="M 24 373 L 113 373 L 202 373 L 292 373 L 381 373 L 470 373 L 559 373 L 649 373 L 738 373 L 827 373 L 916 373 L 1006 373 L 1095 373 L 1184 373 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path></g><g class="series-markers" stroke-width="0" stroke="none" fill="#05b5a2" r="6" inh="true" clip-path="url(#DevExpress_5)"></g></g><g class="series"><g class="series-elements" clip-path="url(#DevExpress_4)"><path fill="#e5eeee" stroke="none" stroke-width="0" opacity="0.8" states="[object Object]" d="M 24 373 L 113 283 L 202 283 L 292 283 L 381 283 L 470 283 L 559 283 L 649 279 L 738 279 L 827 275 L 916 275 L 1006 275 L 1095 271 L 1184 271 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path></g><g class="series-markers" stroke-width="0" stroke="none" fill="#e5eeee" r="6" inh="true" clip-path="url(#DevExpress_5)"></g></g></g><g class="labels-container"><g class="labels" clip-path="url(#DevExpress_4)"></g><g class="labels" clip-path="url(#DevExpress_4)"></g><g class="labels" clip-path="url(#DevExpress_4)"></g><g class="labels" clip-path="url(#DevExpress_4)"></g><g class="labels" clip-path="url(#DevExpress_4)"></g><g class="labels" clip-path="url(#DevExpress_4)"></g></g><g class="tracker" opacity="0.0001"><g class="seriesTracker"><path stroke-width="0" fill="grey" opacity="0.0001" d="M 24 373 L 113 15 L 202 15 L 292 19 L 381 23 L 470 27 L 559 27 L 649 15 L 738 32 L 827 40 L 916 27 L 1006 6 L 1095 57 L 1184 79 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path><path stroke-width="0" fill="grey" opacity="0.0001" d="M 24 373 L 113 373 L 202 373 L 292 373 L 381 373 L 470 373 L 559 373 L 649 373 L 738 373 L 827 373 L 916 373 L 1006 373 L 1095 373 L 1184 373 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path><path stroke-width="0" fill="grey" opacity="0.0001" d="M 24 373 L 113 292 L 202 292 L 292 288 L 381 283 L 470 279 L 559 326 L 649 326 L 738 305 L 827 296 L 916 292 L 1006 292 L 1095 249 L 1184 228 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path><path stroke-width="0" fill="grey" opacity="0.0001" d="M 24 373 L 113 330 L 202 330 L 292 330 L 381 330 L 470 330 L 559 322 L 649 318 L 738 318 L 827 318 L 916 318 L 1006 318 L 1095 309 L 1184 309 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path><path stroke-width="0" fill="grey" opacity="0.0001" d="M 24 373 L 113 373 L 202 373 L 292 373 L 381 373 L 470 373 L 559 373 L 649 373 L 738 373 L 827 373 L 916 373 L 1006 373 L 1095 373 L 1184 373 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path><path stroke-width="0" fill="grey" opacity="0.0001" d="M 24 373 L 113 283 L 202 283 L 292 283 L 381 283 L 470 283 L 559 283 L 649 279 L 738 279 L 827 275 L 916 275 L 1006 275 L 1095 271 L 1184 271 L 1184 373 L 1095 373 L 1006 373 L 916 373 L 827 373 L 738 373 L 649 373 L 559 373 L 470 373 L 381 373 L 292 373 L 202 373 L 113 373 L 24 373 Z"></path></g><g class="markerTracker" stroke="none" fill="grey"><circle cx="24" cy="373" r="10"></circle><circle cx="113" cy="15" r="10"></circle><circle cx="202" cy="15" r="10"></circle><circle cx="292" cy="19" r="10"></circle><circle cx="381" cy="23" r="10"></circle><circle cx="470" cy="27" r="10"></circle><circle cx="559" cy="27" r="10"></circle><circle cx="649" cy="15" r="10"></circle><circle cx="738" cy="32" r="10"></circle><circle cx="827" cy="40" r="10"></circle><circle cx="916" cy="27" r="10"></circle><circle cx="1006" cy="6" r="10"></circle><circle cx="1095" cy="57" r="10"></circle><circle cx="1184" cy="79" r="10"></circle><circle cx="24" cy="373" r="10"></circle><circle cx="113" cy="373" r="10"></circle><circle cx="202" cy="373" r="10"></circle><circle cx="292" cy="373" r="10"></circle><circle cx="381" cy="373" r="10"></circle><circle cx="470" cy="373" r="10"></circle><circle cx="559" cy="373" r="10"></circle><circle cx="649" cy="373" r="10"></circle><circle cx="738" cy="373" r="10"></circle><circle cx="827" cy="373" r="10"></circle><circle cx="916" cy="373" r="10"></circle><circle cx="1006" cy="373" r="10"></circle><circle cx="1095" cy="373" r="10"></circle><circle cx="1184" cy="373" r="10"></circle><circle cx="24" cy="373" r="10"></circle><circle cx="113" cy="292" r="10"></circle><circle cx="202" cy="292" r="10"></circle><circle cx="292" cy="288" r="10"></circle><circle cx="381" cy="283" r="10"></circle><circle cx="470" cy="279" r="10"></circle><circle cx="559" cy="326" r="10"></circle><circle cx="649" cy="326" r="10"></circle><circle cx="738" cy="305" r="10"></circle><circle cx="827" cy="296" r="10"></circle><circle cx="916" cy="292" r="10"></circle><circle cx="1006" cy="292" r="10"></circle><circle cx="1095" cy="249" r="10"></circle><circle cx="1184" cy="228" r="10"></circle><circle cx="24" cy="373" r="10"></circle><circle cx="113" cy="330" r="10"></circle><circle cx="202" cy="330" r="10"></circle><circle cx="292" cy="330" r="10"></circle><circle cx="381" cy="330" r="10"></circle><circle cx="470" cy="330" r="10"></circle><circle cx="559" cy="322" r="10"></circle><circle cx="649" cy="318" r="10"></circle><circle cx="738" cy="318" r="10"></circle><circle cx="827" cy="318" r="10"></circle><circle cx="916" cy="318" r="10"></circle><circle cx="1006" cy="318" r="10"></circle><circle cx="1095" cy="309" r="10"></circle><circle cx="1184" cy="309" r="10"></circle><circle cx="24" cy="373" r="10"></circle><circle cx="113" cy="373" r="10"></circle><circle cx="202" cy="373" r="10"></circle><circle cx="292" cy="373" r="10"></circle><circle cx="381" cy="373" r="10"></circle><circle cx="470" cy="373" r="10"></circle><circle cx="559" cy="373" r="10"></circle><circle cx="649" cy="373" r="10"></circle><circle cx="738" cy="373" r="10"></circle><circle cx="827" cy="373" r="10"></circle><circle cx="916" cy="373" r="10"></circle><circle cx="1006" cy="373" r="10"></circle><circle cx="1095" cy="373" r="10"></circle><circle cx="1184" cy="373" r="10"></circle><circle cx="24" cy="373" r="10"></circle><circle cx="113" cy="283" r="10"></circle><circle cx="202" cy="283" r="10"></circle><circle cx="292" cy="283" r="10"></circle><circle cx="381" cy="283" r="10"></circle><circle cx="470" cy="283" r="10"></circle><circle cx="559" cy="283" r="10"></circle><circle cx="649" cy="279" r="10"></circle><circle cx="738" cy="279" r="10"></circle><circle cx="827" cy="275" r="10"></circle><circle cx="916" cy="275" r="10"></circle><circle cx="1006" cy="275" r="10"></circle><circle cx="1095" cy="271" r="10"></circle><circle cx="1184" cy="271" r="10"></circle></g></g></svg></div>
+						</div>
+						<!-- 2 Today -->
+						<div class="blockToday">
+								<div class="headerBlockActivity">
+										<div class="titleBlock">Number of cases per stage: Jan 08, 2018</div>
+										<div class="blockTodayContant">
+												<div class="itemLegend">
+														<div class="headerLegend">
+																<div class="miniSquare" style="background-color: #abb9bb;"></div>
+																<span>Spam</span>
+														</div>
+														<div class="contentLegend">
+																<label>69</label>
+														</div>
+												</div>
+																<div class="itemLegend">
+																		<div class="headerLegend">
+																				<div class="miniSquare" style="background-color: #D6F9F6;"></div>
+																				<span>New Report</span>
+																		</div>
+																		<div class="contentLegend">
+																				<label>0</label>
+
+
+																		</div>
+																</div>
+																<div class="itemLegend">
+																		<div class="headerLegend">
+																				<div class="miniSquare" style="background-color: #c0ece8;"></div>
+																				<span>New Case</span>
+																		</div>
+																		<div class="contentLegend">
+																				<label>34</label>
+
+
+																		</div>
+																</div>
+																<div class="itemLegend">
+																		<div class="headerLegend">
+																				<div class="miniSquare" style="background-color: #82dad0;"></div>
+																				<span>Under Investigation</span>
+																		</div>
+																		<div class="contentLegend">
+																				<label>15</label>
+
+
+																		</div>
+																</div>
+																<div class="itemLegend">
+																		<div class="headerLegend">
+																				<div class="miniSquare" style="background-color: #44c8b9;"></div>
+																				<span>Resolution</span>
+																		</div>
+																		<div class="contentLegend">
+																				<label>0</label>
+
+
+																		</div>
+																</div>
+																<div class="itemLegend">
+																		<div class="headerLegend">
+																				<div class="miniSquare" style="background-color: #44c8b9;"></div>
+																				<span>Awaiting Sign-Off</span>
+																		</div>
+																		<div class="contentLegend">
+																				<label>0</label>
+
+
+																		</div>
+																</div>
+																<div class="itemLegend">
+																		<div class="headerLegend">
+																				<div class="miniSquare" style="background-color: #e5eeee;"></div>
+																				<span>Closed</span>
+																		</div>
+																		<div class="contentLegend">
+																				<label>24</label>
+
+
+																		</div>
+																</div>
+
+										</div>
+								</div>
+
+						</div>
+						<!-- 3 Average -->
+
+						<div class="blockAverage">
+								<!--work begin-->
+								<div class="titleBlock">Average # of days per stage</div>
+								<div class="wrapper wrapperSpec">
+										<table class="table">
+												<tbody><tr>
+														<td colspan="4" class="headerBorder"></td>
+														<td><div class="parentDivHeader"><div class="headerBrown"> 1 <span class="specialBorder">&nbsp;</span></div></div></td>
+														<td>
+																
+														</td>
+														<td><div class="parentDivHeader"><div class="headerBrown darker">3</div></div></td>
+														<td><div class="parentDivHeader"><div class="headerBrown"> 4 <span class="specialBorder">&nbsp;</span></div></div></td>
+														<td></td>
+														<td><div class="parentDivHeader"><div class="headerBrown"> 6 <span class="specialBorder">&nbsp;</span></div></div></td>
+
+														<td></td>
+														<td></td>
+														<td><div class="base greyBase"><div class="letters">9<span class="specialBorder">&nbsp;</span></div></div></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td>
+																<!--<div class="base"><div class="letters">21</div></div>-->
+														</td>
+														<td><div class="parentDivHeader"><div class="headerBrown2 darker">18</div></div></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td>
+																
+														</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td>
+																
+														</td>
+												</tr>
+												<tr>
+														<td colspan="4">New Report</td>
+														<td>
+																
+														<div class="startRedLineDiv" style="height: 54px"></div><div class="parentDiv"><div class="redDiv"></div><div class="brownDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div><span class="notEven">3</span></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+												</tr>
+												<tr>
+														<td colspan="4">Review</td>
+														<td></td>
+														<td><div class="parentDiv"><div class="brownDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="brownDiv"></div></div></td>
+														<td>
+																
+														<div class="startRedLineDiv" style="height: 103px"></div><div class="parentDiv"><div class="redDiv"></div><div class="brownDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<!--6-->
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div><span class="notEven">15</span></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<!--16-->
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+												</tr>
+												<tr>
+														<td colspan="4">Investigation</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td><div class="parentDiv"><div class="brownDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="brownDiv"></div></div></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td><div class="startRedLineDiv" style="height: 152px"></div><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div><span class="even">10</span></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+												</tr>
+												<tr>
+														<td colspan="4">Resolution</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td><div class="parentDiv"><div class="brownDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="brownDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="brownDiv"></div></div></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+												</tr>
+										</tbody></table>
+								</div>
+								<div class="addTheLegend">
+										<div class="containerCenter">
+												<table>
+														<tbody><tr>
+																<td><img src="./Analytics_files/cutImage.jpg"></td>
+																<td class="text">Stage overdue / Stage within Deadline</td>
+																<td><span class="square"></span></td>
+																<td class="text">Alloted Days per Stage</td>
+														</tr>
+												</tbody></table>
+										</div>
+								</div>
+								<div id="base" style="display: none;">
+												<tbody><tr>
+														<td colspan="4" class="headerBorder"></td>
+														<td></td>
+														<td>
+																
+														</td>
+														<td><div class="parentDivHeader"><div class="headerBrown darker">3</div></div></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td>
+																<!--<div class="base"><div class="letters">21</div></div>-->
+														</td>
+														<td><div class="parentDivHeader"><div class="headerBrown2 darker">18</div></div></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td>
+																
+														</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td>
+																
+														</td>
+												</tr>
+												<tr>
+														<td colspan="4">New Report</td>
+														<td>
+																
+														<div class="startRedLineDiv" style="height: 54px"></div><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+												</tr>
+												<tr>
+														<td colspan="4">Review</td>
+														<td></td>
+														<td></td>
+														<td>
+																
+														</td>
+														<td>
+																
+														<div class="startRedLineDiv" style="height: 103px"></div><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<!--6-->
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<!--16-->
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+												</tr>
+												<tr>
+														<td colspan="4">Investigation</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td><div class="startRedLineDiv" style="height: 152px"></div><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td>
+																
+														<div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+														<td><div class="parentDiv"><div class="redDiv"></div></div></td>
+												</tr>
+												<tr>
+														<td colspan="4">Resolution</td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td></td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+														<td>
+																
+														</td>
+												</tr>
+										</tbody></div>
+						</div>
+						<!-- 4 Departments & Locations -->
+						<div class="bigBlock">
+								<!-- 4_1 Departments -->
+								<div class="blockDepartments">
+										<div class="headerBlockActivity">
+												<div class="titleBlock">Departments</div>
+										</div>
+										<div style="width: 100%; display: table;">
+												<div id="containerDepartments" class="containers" style="height: 250px; width: 95%; margin-left: 5%;"></div>
+										</div>
+								</div>
+								<!-- 4_2 Locations -->
+								<div class="blockLocations">
+										<div class="headerBlockActivity">
+												<div class="titleBlock">Locations</div>
+										</div>
+										<div style="width: 100%; display: table;">
+												<div id="containerLocation" class="containers" style="height: 250px; width: 95%; margin-left: 5%;"><svg width="588" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" stroke="none" stroke-width="0" fill="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><defs><clippath id="DevExpress_1"><rect x="0" y="0" width="588" height="250" rx="0" ry="0" fill="none" stroke="none" stroke-width="0"></rect></clippath><pattern id="DevExpressPattern_1" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#739fa9" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#739fa9" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#739fa9" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_2" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#ce6165" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#ce6165" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#ce6165" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_3" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#c39e67" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#c39e67" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#c39e67" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_4" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#a97385" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#a97385" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#a97385" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_5" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#99aa7a" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#99aa7a" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#99aa7a" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_6" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#927ca0" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#927ca0" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#927ca0" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_7" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#a5d1db" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#a5d1db" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#a5d1db" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_8" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#ff9397" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#ff9397" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#ff9397" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_9" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#f5d099" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#f5d099" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#f5d099" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_10" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#dba5b7" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#dba5b7" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#dba5b7" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_11" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#cbdcac" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#cbdcac" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#cbdcac" d="M 0 6 L 6 0"></path></pattern><pattern id="DevExpressPattern_12" width="6" height="6" patternUnits="userSpaceOnUse"><path stroke-width="1" stroke="#c4aed2" opacity="0.8" d="M 0 0 L 1 1"></path><path stroke-width="1" stroke="#c4aed2" opacity="0.8" d="M 5 5 L 6 6"></path><path stroke-width="2" stroke="#c4aed2" d="M 0 6 L 6 0"></path></pattern></defs><g class="dxLegend"><g transform="translate(20,21)"><g class="dxLegendSeries" transform="translate(10,0)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#5f8b95"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">Stark Tower, NY - 100</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(10,33)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#ba4d51"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">Toronto, ON, Canada - 28</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(10,66)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#af8a53"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">London, UK - 7</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(10,99)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#955f71"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">Miami, FL, United States - 6</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(10,132)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#859666"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">Palo Alto, CA, United States - 4</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(10,165)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#7e688c"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">New York, New York, United States - 3</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(252,0)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#91bdc7"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">Seattle, United States - 1</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(252,33)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#ec7f83"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">washington dc - 1</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(252,66)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#e1bc85"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">вв - 1</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(252,99)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#c791a3"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">123 - 1</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(252,132)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#b7c898"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">miami, florida - 1</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g><g class="dxLegendSeries" transform="translate(252,165)"><rect x="0" y="0" width="12" height="12" rx="0" ry="0" fill="#b09abe"></rect><text x="19" y="0" text-anchor="start" style="fill: rgb(128, 128, 128); fill-opacity: 0.75; font-family: SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 400; font-size: 12px; cursor: default;" transform="translate(0,11)"><tspan x="19" dy="0">Seattle-Tacoma - 1</tspan></text><rect x="-20" y="-11" width="242" height="33" rx="0" ry="0" stroke="none" fill="grey" opacity="0.0001"></rect></g></g></g><g class="series"><g class="series"><g class="series-elements"></g><g class="series-markers" stroke-width="0" stroke="none" fill="#b09abe" r="0" inh="true" stroke-dasharray="none" line-width="2"><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#5f8b95" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 510.7656938057925 91.92888868989436 A 41 41 0 1 0 575.9999999999376 125.00007155849933 L 555.999999999968 125.00003665191429 A 21 21 0 1 1 522.5873065834547 108.06113810945808 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#ba4d51" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 555.0152349918784 89.21745721416815 A 41 41 0 0 0 510.7656938057925 91.92888868989436 L 522.5873065834547 108.06113810945808 A 21 21 0 0 1 545.2517057275475 106.67235613408613 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#af8a53" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 564.2855823328928 96.30584262566062 A 41 41 0 0 0 555.0152349918784 89.21745721416815 L 545.2517057275475 106.67235613408613 A 21 21 0 0 1 549.9999324144085 110.30299256436275 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#955f71" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 570.3668250954692 104.25903370943162 A 41 41 0 0 0 564.2855823328928 96.30584262566062 L 549.9999324144085 110.30299256436275 A 21 21 0 0 1 553.1147152928013 114.3765782414162 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#859666" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 573.2667988638776 110.28089320945276 A 41 41 0 0 0 570.3668250954692 104.25903370943162 L 553.1147152928013 114.3765782414162 A 21 21 0 0 1 554.6000677107666 117.46094530240262 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#7e688c" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 574.7776248542395 115.06317148405043 A 41 41 0 0 0 573.2667988638776 110.28089320945276 L 554.6000677107666 117.46094530240262 A 21 21 0 0 1 555.3739054131471 119.91040490646486 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#91bdc7" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 575.1498309797314 116.69391353891643 A 41 41 0 0 0 574.7776248542395 115.06317148405043 L 555.3739054131471 119.91040490646486 A 21 21 0 0 1 555.5645475749844 120.74566303212794 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#ec7f83" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 575.4552117110311 118.33848024729687 A 41 41 0 0 0 575.1498309797314 116.69391353891643 L 555.5645475749844 120.74566303212794 A 21 21 0 0 1 555.7209620958939 121.58800207788377 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#e1bc85" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 575.6932587723312 119.99413439172703 A 41 41 0 0 0 575.4552117110311 118.33848024729687 L 555.7209620958939 121.58800207788377 A 21 21 0 0 1 555.8428886394867 122.4360200542992 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#c791a3" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 575.863575958011 121.65812030080929 A 41 41 0 0 0 575.6932587723312 119.99413439172703 L 555.8428886394867 122.4360200542992 A 21 21 0 0 1 555.9301242711764 123.28830551992671 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#b7c898" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 575.965879792081 123.3276684357539 A 41 41 0 0 0 575.863575958011 121.65812030080929 L 555.9301242711764 123.28830551992671 A 21 21 0 0 1 555.9825237959438 124.1434399305081 Z"></path><path stroke-linejoin="round" stroke-width="0" stroke="none" fill="#b09abe" r="0" inh="false" stroke-dasharray="none" line-width="2" d="M 576 125 A 41 41 0 0 0 575.965879792081 123.3276684357539 L 555.9825237959438 124.1434399305081 A 21 21 0 0 1 556 125 Z"></path></g></g></g><g class="labels"><g class="labels"></g></g><g class="dxTooltip"><path fill="#000000" stroke="none" visibility="hidden" opacity="0.1" d="M 0 0"></path><path visibility="hidden" d="M 0 0 Z"></path><text x="0" y="0" text-anchor="middle" visibility="hidden" style="font-family: SegoeUI-Light, &quot;Segoe UI Light&quot;, HelveticaNeue-Light, &quot;Helvetica Neue Light&quot;, SegoeUI, &quot;Segoe UI&quot;, HelveticaNeue, &quot;Helvetica Neue&quot;, &quot;Trebuchet MS&quot;, Verdana; font-weight: 200; font-size: 26px; fill: rgb(255, 255, 255); fill-opacity: 0.75; cursor: default;"><tspan x="0" dy="0">0</tspan></text></g><g class="tracker" opacity="0.0001"><g class="seriesTracker"></g><g class="markerTracker" stroke="none" fill="grey"><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 510.7656938057925 91.92888868989436 A 41 41 0 1 0 575.9999999999376 125.00007155849933 L 555.999999999968 125.00003665191429 A 21 21 0 1 1 522.5873065834547 108.06113810945808 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 555.0152349918784 89.21745721416815 A 41 41 0 0 0 510.7656938057925 91.92888868989436 L 522.5873065834547 108.06113810945808 A 21 21 0 0 1 545.2517057275475 106.67235613408613 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 564.2855823328928 96.30584262566062 A 41 41 0 0 0 555.0152349918784 89.21745721416815 L 545.2517057275475 106.67235613408613 A 21 21 0 0 1 549.9999324144085 110.30299256436275 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 570.3668250954692 104.25903370943162 A 41 41 0 0 0 564.2855823328928 96.30584262566062 L 549.9999324144085 110.30299256436275 A 21 21 0 0 1 553.1147152928013 114.3765782414162 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 573.2667988638776 110.28089320945276 A 41 41 0 0 0 570.3668250954692 104.25903370943162 L 553.1147152928013 114.3765782414162 A 21 21 0 0 1 554.6000677107666 117.46094530240262 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 574.7776248542395 115.06317148405043 A 41 41 0 0 0 573.2667988638776 110.28089320945276 L 554.6000677107666 117.46094530240262 A 21 21 0 0 1 555.3739054131471 119.91040490646486 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 575.1498309797314 116.69391353891643 A 41 41 0 0 0 574.7776248542395 115.06317148405043 L 555.3739054131471 119.91040490646486 A 21 21 0 0 1 555.5645475749844 120.74566303212794 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 575.4552117110311 118.33848024729687 A 41 41 0 0 0 575.1498309797314 116.69391353891643 L 555.5645475749844 120.74566303212794 A 21 21 0 0 1 555.7209620958939 121.58800207788377 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 575.6932587723312 119.99413439172703 A 41 41 0 0 0 575.4552117110311 118.33848024729687 L 555.7209620958939 121.58800207788377 A 21 21 0 0 1 555.8428886394867 122.4360200542992 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 575.863575958011 121.65812030080929 A 41 41 0 0 0 575.6932587723312 119.99413439172703 L 555.8428886394867 122.4360200542992 A 21 21 0 0 1 555.9301242711764 123.28830551992671 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 575.965879792081 123.3276684357539 A 41 41 0 0 0 575.863575958011 121.65812030080929 L 555.9301242711764 123.28830551992671 A 21 21 0 0 1 555.9825237959438 124.1434399305081 Z"></path><path stroke-linejoin="round" stroke="none" fill="grey" opacity="0.0001" inh="false" d="M 576 125 A 41 41 0 0 0 575.965879792081 123.3276684357539 L 555.9825237959438 124.1434399305081 A 21 21 0 0 1 556 125 Z"></path></g></g></svg></div>
+										</div>
+
+								</div>
+						</div>
+
+						<!-- 5 Type of incident & Reporter -->
+						<div class="bigBlock">
+								<!-- 5_1 Type of incident -->
+								<div class="blockTypeOfIncident">
+										<div class="headerBlockActivity">
+												<div class="titleBlock">Type of incident</div>
+										</div>
+										<div class="allBlockLines"><div class="blockLinesItem"><p>Criminal Activity</p><div class="linesShow"><div class="blockLineFirst" style="width: 14.2593%;"></div><label>11</label><div class="blockLinesItem"><p>Financial Reporting and Accounting</p><div class="linesShow"><div class="blockLineFirst" style="width: 70%;"></div><label>54</label><div class="blockLinesItem"><p>Breach of Legal Obligations</p><div class="linesShow"><div class="blockLineFirst" style="width: 35%;"></div><label>27</label><div class="blockLinesItem"><p>Fraud and Embezzlement</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>Workplace Health and Safety</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>fraud and embezzelment</p><div class="linesShow"><div class="blockLineFirst" style="width: 23.3333%;"></div><label>18</label><div class="blockLinesItem"><p>discrimination</p><div class="linesShow"><div class="blockLineFirst" style="width: 12.963%;"></div><label>10</label><div class="blockLinesItem"><p>safety</p><div class="linesShow"><div class="blockLineFirst" style="width: 6.48148%;"></div><label>5</label><div class="blockLinesItem"><p>financial</p><div class="linesShow"><div class="blockLineFirst" style="width: 3.88889%;"></div><label>3</label><div class="blockLinesItem"><p>Alcohol and drug abuse</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>Accounting1</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>Conflict of Interest</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>Harrassment</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>fin incident</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>dfqwf qfww2f2222</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p>af qgggggd s</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.2963%;"></div><label>1</label><div class="blockLinesItem"><p></p><div class="linesShow"><div class="blockLineFirst" style="width: 2.59259%;"></div><label>2</label></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+										<!--allBlockLines-->
+								</div>
+								<!-- 5_2 Reporter -->
+								<div class="blockReporter">
+										<div class="headerBlockActivity">
+												<div class="titleBlock">Type of Reporter</div>
+										</div>
+
+										<div class="allBlockLines"><div class="blockLinesItem"><p>Employee</p><div class="linesShow"><div class="blockLineFirst" style="width: 70%;"></div><label>105</label><div class="blockLinesItem"><p>Former employee</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.33333%;"></div><label>2</label><div class="blockLinesItem"><p>Contractor</p><div class="linesShow"><div class="blockLineFirst" style="width: 4.66667%;"></div><label>7</label><div class="blockLinesItem"><p>Customer</p><div class="linesShow"><div class="blockLineFirst" style="width: 0.666667%;"></div><label>1</label><div class="blockLinesItem"><p>Member of the public</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.33333%;"></div><label>2</label><div class="blockLinesItem"><p>p/t employee</p><div class="linesShow"><div class="blockLineFirst" style="width: 2%;"></div><label>3</label><div class="blockLinesItem"><p>Union Member</p><div class="linesShow"><div class="blockLineFirst" style="width: 1.33333%;"></div><label>2</label><div class="blockLinesItem"><p>other employee</p><div class="linesShow"><div class="blockLineFirst" style="width: 0.666667%;"></div><label>1</label><div class="blockLinesItem"><p>non-employee</p><div class="linesShow"><div class="blockLineFirst" style="width: 0.666667%;"></div><label>1</label><div class="blockLinesItem"><p>other emplo</p><div class="linesShow"><div class="blockLineFirst" style="width: 0.666667%;"></div><label>1</label><div class="blockLinesItem"><p>eee</p><div class="linesShow"><div class="blockLineFirst" style="width: 0.666667%;"></div><label>1</label><div class="blockLinesItem"><p>екф</p><div class="linesShow"><div class="blockLineFirst" style="width: 0.666667%;"></div><label>1</label><div class="blockLinesItem"><p>fdfwe eeg ege</p><div class="linesShow"><div class="blockLineFirst" style="width: 0.666667%;"></div><label>1</label></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+										<!--allBlockLines-->
+								</div>
+
+
+						</div>
+				</div><!--contentSettings-->
+				</div><!-- /.container -->
+		</div>
+</div><!--end blockSettings blockAnalitics-->
+
+<script type="text/javascript" src="./Analytics_files/globalize.min.js.download"></script>
+<script type="text/javascript" src="./Analytics_files/dx.chartjs.js.download"></script>
+
+
+<script>
+		$(document).ready(function () {
+
+				//START Open mini menu for mobile
+				function blockActivityHeight() {
+						if ($('#menu').height() < 50) {
+								$('.positionActivityIcon').height(89);
+						}
+						else {
+								$('.positionActivityIcon').height($('#casesHeared').height());
+						}
+				}
+				$('.mainTitle').click(function () {
+						$('.mainTitle + div').toggle();
+						blockActivityHeight();
+				});
+				//var data =
+				//$("#chartContainer").dxChart({
+				//    dataSource: data,
+				//    series: [
+				//        {
+				//            argumentField: 'month',
+				//            valueField: 'pending',
+				//            type: 'area',
+				//            color: '#D6F9F6'
+				//        },
+				//        {
+				//            argumentField: 'month',
+				//            valueField: 'review',
+				//            type: 'area',
+				//            color: '#c0ece8'
+				//        },
+				//        {
+				//            argumentField: 'month',
+				//            valueField: 'investigation',
+				//            type: 'area',
+				//            color: '#82dad0'
+				//        },
+				//        {
+				//            argumentField: 'month',
+				//            valueField: 'resolution',
+				//            type: 'area',
+				//            color: '#44c8b9'
+				//        },
+				//        {
+				//            argumentField: 'month',
+				//            valueField: 'closed',
+				//            type: 'area',
+				//            color: '#e5eeee',
+				//            opacity: '0.8'/*,
+				//            hoverMode: "none"*/
+				//        }
+				//    ],
+				//    legend: { visible: false },
+				//    argumentAxis: {
+				//        valueMarginsEnabled: false
+				//    }
+				//});
+		});
+</script>
+<script src="./Analytics_files/updateAjax.js.download"></script>
+				<script src="./Analytics_files/Settings.js.download"></script>
+				<script type="text/javascript">
+						$(document).ready(function () {
+								//var button = $(".acceptCaseBtn.resolveCase");
+								var textareaPopup = $('textarea#txtResolve');
+
+								function overlay() {
+										el = document.getElementById("anotherDialog");
+										el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+								}
+
+
+								var textareaNewPopup = $('textarea#txtEscalate');
+
+								function overlay_approve() {
+										el = document.getElementById("approveDialog");
+										el.style.visibility = (el.style.visibility == "visible") ? "hidden" : "visible";
+								}
+
+								function startClick(){
+										$('.logButtonModal').click(
+												function(){
+														if(textareaPopup[0].value==""){
+																textareaPopup.css({'border-color':'red', 'box-shadow':'red'});
+														}
+														else{
+															//  console.log('logButtonModal click - _report_id = ' + 0);
+														}
+												}
+										);
+										$('.repButtonModal').click(
+												function(){
+														if(textareaPopup[0].value==""){
+																textarea.css({'border-color':'red', 'box-shadow':'red'});
+														}
+														else{
+														//    console.log('repButtonModal click - _report_id = ' + 0);
+														}
+												}
+										);
+								}
+								startClick();
+						});
+
+						$("#return_investigation").on('click', function(el){
+
+								$("#approveDialog").toggle();
+								$("#txtEscalate").attr('placeholder', "Add reason why the case requires further investigation.");
+
+								$("#escalate_btn").text("Return for Investigation");
+								$("#escalate_btn").val(3);
+								$("#_overlay_title").text("Return for Investigation");
+								$("#textbox_title").text("Add reason why the case requires further investigation.");
+						});
+						$("#approve_close").on('click', function(el){
+
+								$("#approveDialog").toggle();
+								$("#txtEscalate").attr('placeholder', "Please note: We stongly recommend that you invite a second reviewer to read the case report and approve the request for closure. It is not best practise to have the same person create the closure report and approve the request to close the case.");
+								$("#escalate_btn").text("Close Case");
+								$("#escalate_btn").val(9);
+								$("#_overlay_title").text("Close Case");
+								$("#textbox_title").text("Please note: We stongly recommend that you invite a second reviewer to read the case report and approve the request for closure. It is not best practise to have the same person create the closure report and approve the request to close the case.");
+						});
+				</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div class="date-picker-wrapper no-shortcuts no-gap two-months" style="display: none; top: 575.556px; left: 0px; user-select: none;" unselectable="on"><div class="drp_top-bar"><div class="normal-top"><span style="color:#333">Selected: </span> <b class="start-day">...</b> <span class="separator-day"> to </span> <b class="end-day">...</b> <i class="selected-days">(<span class="selected-days-num">3</span> Days)</i></div><div class="error-top">error</div><div class="default-top">Please select a date range</div><input type="button" class="apply-btn disabled" value="Close"></div><div class="month-wrapper" style="width: 415px;"><table class="month1" cellspacing="0" border="0" cellpadding="0"><thead><tr class="caption"><th style="width:27px;"><span class="prev">&lt;</span></th><th colspan="5" class="month-name">january 2018</th><th style="width:27px;"><span class="next">&gt;</span></th></tr><tr class="week-name"><th>su</th><th>mo</th><th>tu</th><th>we</th><th>th</th><th>fr</th><th>sa</th></tr></thead><tbody><tr><td><div time="1514754024467" data-tooltip="" class="day lastMonth  valid ">31</div></td><td><div time="1514840424467" data-tooltip="" class="day toMonth  valid ">1</div></td><td><div time="1514926824467" data-tooltip="" class="day toMonth  valid ">2</div></td><td><div time="1515013224467" data-tooltip="" class="day toMonth  valid ">3</div></td><td><div time="1515099624467" data-tooltip="" class="day toMonth  valid ">4</div></td><td><div time="1515186024467" data-tooltip="" class="day toMonth  valid ">5</div></td><td><div time="1515272424467" data-tooltip="" class="day toMonth  valid ">6</div></td></tr><tr><td><div time="1515358824467" data-tooltip="" class="day toMonth  valid ">7</div></td><td><div time="1515445224467" data-tooltip="" class="day toMonth  valid real-today">8</div></td><td><div time="1515531624467" data-tooltip="" class="day toMonth  valid ">9</div></td><td><div time="1515618024467" data-tooltip="" class="day toMonth  valid ">10</div></td><td><div time="1515704424467" data-tooltip="" class="day toMonth  valid ">11</div></td><td><div time="1515790824467" data-tooltip="" class="day toMonth  valid ">12</div></td><td><div time="1515877224467" data-tooltip="" class="day toMonth  valid ">13</div></td></tr><tr><td><div time="1515963624467" data-tooltip="" class="day toMonth  valid ">14</div></td><td><div time="1516050024467" data-tooltip="" class="day toMonth  valid ">15</div></td><td><div time="1516136424467" data-tooltip="" class="day toMonth  valid ">16</div></td><td><div time="1516222824467" data-tooltip="" class="day toMonth  valid ">17</div></td><td><div time="1516309224467" data-tooltip="" class="day toMonth  valid ">18</div></td><td><div time="1516395624467" data-tooltip="" class="day toMonth  valid ">19</div></td><td><div time="1516482024467" data-tooltip="" class="day toMonth  valid ">20</div></td></tr><tr><td><div time="1516568424467" data-tooltip="" class="day toMonth  valid ">21</div></td><td><div time="1516654824467" data-tooltip="" class="day toMonth  valid ">22</div></td><td><div time="1516741224467" data-tooltip="" class="day toMonth  valid ">23</div></td><td><div time="1516827624467" data-tooltip="" class="day toMonth  valid ">24</div></td><td><div time="1516914024467" data-tooltip="" class="day toMonth  valid ">25</div></td><td><div time="1517000424467" data-tooltip="" class="day toMonth  valid ">26</div></td><td><div time="1517086824467" data-tooltip="" class="day toMonth  valid ">27</div></td></tr><tr><td><div time="1517173224467" data-tooltip="" class="day toMonth  valid ">28</div></td><td><div time="1517259624467" data-tooltip="" class="day toMonth  valid ">29</div></td><td><div time="1517346024467" data-tooltip="" class="day toMonth  valid ">30</div></td><td><div time="1517432424467" data-tooltip="" class="day toMonth  valid ">31</div></td><td><div time="1517518824467" data-tooltip="" class="day nextMonth  valid ">1</div></td><td><div time="1517605224467" data-tooltip="" class="day nextMonth  valid ">2</div></td><td><div time="1517691624467" data-tooltip="" class="day nextMonth  valid ">3</div></td></tr></tbody></table><div class="gap" style="visibility: hidden; height: 10px;"><div class="gap-top-mask"></div><div class="gap-bottom-mask"></div><div class="gap-lines"><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div><div class="gap-line"><div class="gap-1"></div><div class="gap-2"></div><div class="gap-3"></div></div></div></div><table class="month2" cellspacing="0" border="0" cellpadding="0"><thead><tr class="caption"><th style="width:27px;"><span class="prev">&lt;</span></th><th colspan="5" class="month-name">february 2018</th><th style="width:27px;"><span class="next">&gt;</span></th></tr><tr class="week-name"><th>su</th><th>mo</th><th>tu</th><th>we</th><th>th</th><th>fr</th><th>sa</th></tr></thead><tbody><tr><td><div time="1517173224467" data-tooltip="" class="day lastMonth  valid ">28</div></td><td><div time="1517259624467" data-tooltip="" class="day lastMonth  valid ">29</div></td><td><div time="1517346024467" data-tooltip="" class="day lastMonth  valid ">30</div></td><td><div time="1517432424467" data-tooltip="" class="day lastMonth  valid ">31</div></td><td><div time="1517518824467" data-tooltip="" class="day toMonth  valid ">1</div></td><td><div time="1517605224467" data-tooltip="" class="day toMonth  valid ">2</div></td><td><div time="1517691624467" data-tooltip="" class="day toMonth  valid ">3</div></td></tr><tr><td><div time="1517778024467" data-tooltip="" class="day toMonth  valid ">4</div></td><td><div time="1517864424467" data-tooltip="" class="day toMonth  valid ">5</div></td><td><div time="1517950824467" data-tooltip="" class="day toMonth  valid ">6</div></td><td><div time="1518037224467" data-tooltip="" class="day toMonth  valid ">7</div></td><td><div time="1518123624467" data-tooltip="" class="day toMonth  valid ">8</div></td><td><div time="1518210024467" data-tooltip="" class="day toMonth  valid ">9</div></td><td><div time="1518296424467" data-tooltip="" class="day toMonth  valid ">10</div></td></tr><tr><td><div time="1518382824467" data-tooltip="" class="day toMonth  valid ">11</div></td><td><div time="1518469224467" data-tooltip="" class="day toMonth  valid ">12</div></td><td><div time="1518555624467" data-tooltip="" class="day toMonth  valid ">13</div></td><td><div time="1518642024467" data-tooltip="" class="day toMonth  valid ">14</div></td><td><div time="1518728424467" data-tooltip="" class="day toMonth  valid ">15</div></td><td><div time="1518814824467" data-tooltip="" class="day toMonth  valid ">16</div></td><td><div time="1518901224467" data-tooltip="" class="day toMonth  valid ">17</div></td></tr><tr><td><div time="1518987624467" data-tooltip="" class="day toMonth  valid ">18</div></td><td><div time="1519074024467" data-tooltip="" class="day toMonth  valid ">19</div></td><td><div time="1519160424467" data-tooltip="" class="day toMonth  valid ">20</div></td><td><div time="1519246824467" data-tooltip="" class="day toMonth  valid ">21</div></td><td><div time="1519333224467" data-tooltip="" class="day toMonth  valid ">22</div></td><td><div time="1519419624467" data-tooltip="" class="day toMonth  valid ">23</div></td><td><div time="1519506024467" data-tooltip="" class="day toMonth  valid ">24</div></td></tr><tr><td><div time="1519592424467" data-tooltip="" class="day toMonth  valid ">25</div></td><td><div time="1519678824467" data-tooltip="" class="day toMonth  valid ">26</div></td><td><div time="1519765224467" data-tooltip="" class="day toMonth  valid ">27</div></td><td><div time="1519851624467" data-tooltip="" class="day toMonth  valid ">28</div></td><td><div time="1519938024467" data-tooltip="" class="day nextMonth  valid ">1</div></td><td><div time="1520024424467" data-tooltip="" class="day nextMonth  valid ">2</div></td><td><div time="1520110824467" data-tooltip="" class="day nextMonth  valid ">3</div></td></tr></tbody></table><div style="clear:both;height:0;font-size:0;"></div><div class="time"><div class="time1"></div><div class="time2"></div></div><div style="clear:both;height:0;font-size:0;"></div></div><div class="footer"></div><div class="date-range-length-tip"></div></div><script id="wappalyzer" src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/inject.js"></script></body></html>
