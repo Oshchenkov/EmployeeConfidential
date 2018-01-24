@@ -58,6 +58,10 @@
 
     angular.module('EC').filter('parseUrl', function () {
         return function (url, param) {
+            var p = url.indexOf('#');
+            if (p !== -1) {
+                url = url.substring(0, p);
+            }
             if (url.indexOf('?') === -1) {
                 var s = url.split('/');
                 return s[s.length - 1];
@@ -131,6 +135,14 @@
                 if (className === NG_HIDE_CLASS) {
                     element.slideUp(done);
                 }
+            }
+        };
+    });
+
+    angular.module('EC').directive('repeatDone', function () {
+        return function (scope, element, attrs) {
+            if (scope.$last) {
+                scope.$eval(attrs.repeatDone);
             }
         };
     });
@@ -228,6 +240,150 @@
             if (type === 1) {
                 return $scope.totals.length <= id ? 0 : $scope.totals[id].count;
             }
+            if (type === 2) {
+                return $scope.totals.length <= id ? 0 : $scope.totals[id].count;
+            }
+        };
+    }
+}());
+
+(function () {
+
+    'use strict';
+
+    angular
+        .module('EC')
+        .controller('AnalyticsRootCauseAnalysisController',
+            ['$scope', 'AnalyticsRootCauseAnalysisService', AnalyticsRootCauseAnalysisController]);
+
+    function AnalyticsRootCauseAnalysisController($scope, AnalyticsRootCauseAnalysisService) {
+
+        $scope.secondaryType = { id: 0 };
+        $scope.secondaryTypes = [];
+
+        $scope.refresh = function () {
+            /*var types = $scope.secondaryTypes.map(function (v) {
+                return v._selected;
+            });*/
+            AnalyticsRootCauseAnalysisService.get({ secondaryType: $scope.secondaryType.id }, function (data) {
+                if ($scope.secondaryTypes.length === 0) {
+                    $scope.secondaryTypes = data.SecondaryTypes;
+                    $scope.secondaryType = $scope.secondaryTypes[0];
+                }
+                $scope.chartData1 = data.Behavioral;
+                $scope.chartData2 = data.External;
+                $scope.chartData3 = data.Organizational;
+                $scope.chart1.chart.title = data.BehavioralTotal;
+                $scope.chart2.chart.title = data.ExternalTotal;
+                $scope.chart3.chart.title = data.OrganizationalTotal;
+                $scope.chartColors = data.Colors;
+            });
+        };
+
+        $scope.chartColors = ['#3099be', '#ff9b42', '#868fb8', '#64cd9b', '#ba83b8', '#c6c967', '#73cbcc', '#d47472'];
+
+        $scope.refresh();
+
+        $scope.selectSecondaryTypes = function (item) {
+            //item._selected = !item._selected;
+            $scope.secondaryType = item;
+            $scope.refresh();
+        };
+
+
+        $scope.chart1 = {
+            chart: {
+                type: 'pieChart',
+                donut: true,
+                donutRatio: 1,
+                x: function (d) {
+                    return d.name;
+                },
+                y: function (d) {
+                    return d.count;
+                },
+                height: 500,
+                showLabels: false,
+                color: $scope.chartColors,
+                duration: 500,
+                labelThreshold: 0.01,
+                labelSunbeamLayout: true,
+                //legendPosition: 'bottom',
+                showLegend: false,
+                title: {
+                    enable: true,
+                    text: '',
+                },
+                labels: {
+                    mainLabel: {
+                        fontSize: 20,
+                    },
+                },
+                legend: {
+                    margin: {
+                        top: 5,
+                        right: 35,
+                        bottom: 5,
+                        left: 0
+                    }
+                }
+            }
+        };
+        $scope.chart2 = {
+            chart: {
+                type: 'pieChart',
+                donut: true,
+                donutRatio: 1,
+                x: function (d) {
+                    return d.name;
+                },
+                y: function (d) {
+                    return d.count;
+                },
+                height: 500,
+                showLabels: false,
+                color: $scope.chartColors,
+                duration: 500,
+                labelThreshold: 0.01,
+                labelSunbeamLayout: true,
+                showLegend: false,
+                legend: {
+                    margin: {
+                        top: 5,
+                        right: 35,
+                        bottom: 5,
+                        left: 0
+                    }
+                }
+            }
+        };
+        $scope.chart3 = {
+            chart: {
+                type: 'pieChart',
+                donut: true,
+                donutRatio: 1,
+                x: function (d) {
+                    return d.name;
+                },
+                y: function (d) {
+                    return d.count;
+                },
+                height: 500,
+                showLabels: false,
+                color: $scope.chartColors,
+                duration: 500,
+                labelThreshold: 0.01,
+                labelSunbeamLayout: true,
+                showLegend: false,
+                legend: {
+                    margin: {
+                        top: 5,
+                        right: 35,
+                        bottom: 5,
+                        left: 0
+                    }
+                }
+            }
         };
     }
 }());
@@ -239,20 +395,41 @@
     angular
         .module('EC')
         .controller('CasesController',
-            ['$scope', '$filter', 'orderByFilter', 'CasesService', CasesController]);
+            ['$scope', '$filter', '$location', 'orderByFilter', 'CasesService', CasesController]);
 
-    function CasesController($scope, $filter, orderByFilter, CasesService) {
+    function CasesController($scope, $filter, $location, orderByFilter, CasesService) {
         $scope.showAsGrid = true;
         $scope.mode = 1;
         $scope.reports = [];
         $scope.sortColumn = 'case_number';
         $scope.sortColumnDesc = true;
+        var tab = $filter('parseUrl')($location.$$absUrl, 'mode').toLowerCase();
+        $scope.mode = tab === 'active' ? 1 : $scope.mode;
+        $scope.mode = tab === 'completed' ? 2 : $scope.mode;
+        $scope.mode = tab === 'closed' ? 5 : $scope.mode;
+        $scope.mode = tab === 'spam' ? 3 : $scope.mode;
 
         $scope.counts = {
             Active: 0,
             Completed: 0,
             Spam: 0,
             Closed: 0,
+        };
+
+        $scope.sortClass = function (column) {
+            if (column === $scope.sortColumn) {
+                return !$scope.sortColumnDesc ? 'sortArrow_down' : 'sortArrow_up';
+            }
+            return '';
+        };
+
+        $scope.isOwner = function (report, mediator) {
+            for (var i = 0; i < report.AdvInfo.owners.length; i++) {
+                if (report.AdvInfo.owners[i].user_id === mediator.id) {
+                    return true;
+                }
+            }
+            return false;
         };
 
         $scope.refresh = function (mode, preload) {
@@ -302,16 +479,20 @@
         $scope.refresh($scope.mode);
 
         $scope.openCase = function (id) {
-            window.location ='/newCase/Index/' + id;
+            if ($scope.mode === 3) {
+                window.location = '/NewReport/' +id;
+            } else {
+                window.location = '/newCase/Index/' + id;
+            }
         };
 
         $scope.sort = function (column) {
             if (column === $scope.sortColumn) {
                 $scope.sortColumnDesc = !$scope.sortColumnDesc;
-            } else {
+        } else {
                 $scope.sortColumn = column;
                 $scope.sortColumnDesc = false;
-            }
+        }
 
             $scope.reports = orderByFilter($scope.reports, $scope.sortColumn, $scope.sortColumnDesc);
         };
@@ -458,7 +639,7 @@
                 }
             });
             data.report_case_closure_outcome2 = $filter('filter')(data.report_case_closure_outcome, function (value) {
-                if (value.mediator.role_in_report_id === 2) {
+                if ((value.mediator.role_in_report_id === 2) || (value.mediator.role_in_report_id === 3)) {
                     return true;
                 }
             });
@@ -507,6 +688,7 @@
         };
 
         $scope.saveOutcome = function (item, outcome) {
+            console.log(item, outcome);
             if (outcome !== undefined) {
                 item.outcome.outcome_id = outcome.id;
             }
@@ -771,6 +953,7 @@
         $scope.currentUser = {};
 
         $scope.newMessage = '';
+        $scope.newMessageReporter = '';
 
         $scope.refresh = function () {
             NewCaseMessagesService.get({ id: $scope.report_id }, function (data) {
@@ -783,8 +966,15 @@
         };
 
         $scope.sendMessage = function () {
-            NewCaseMessagesService.post({ report_id: $scope.report_id, newMessage: $scope.newMessage }, function () {
+            NewCaseMessagesService.post({ mode: 1, report_id: $scope.report_id, newMessage: $scope.newMessage }, function () {
                 $scope.newMessage = '';
+                $scope.refresh();
+            });
+        };
+
+        $scope.sendMessageReporter = function () {
+            NewCaseMessagesService.post({ mode: 2, report_id: $scope.report_id, newMessage: $scope.newMessageReporter }, function () {
+                $scope.newMessageReporter = '';
                 $scope.refresh();
             });
         };
@@ -847,20 +1037,66 @@
         $scope.report_id = $filter('parseUrl')($location.$$absUrl, 'report_id');
 
         $scope.roleNames = ['', '', '', '', 'Case Reviewer', 'Platform Manager', 'Case Investigator', 'Legal counsel'];
-        $scope.roleClasses = ['', '', '', '', 'escalation', 'admin', '', ''];
+        $scope.roleClasses = ['', '', '', '', 'teamBlock-body__profileSpec_reviewer', 'teamBlock-body__profileSpec_owner', '', ''];
 
-        $scope.refresh = function () {
-            NewCaseTeamService.get({ id: $scope.report_id }, function (data) {
-                $scope.involved_mediators_user_list = data.involved_mediators_user_list;
-                $scope.mediators_whoHasAccess_toReport = data.mediators_whoHasAccess_toReport;
-                $scope.available_toAssign_mediators = data.available_toAssign_mediators;
-                $scope.currentInfo = data.currentInfo;
+        $scope.makeCircles = function () {
+            var canvasTeam = $('.teamBlock').find('.canvasCircle');
+            for (var i = 0; i < canvasTeam.length; i++) {
+                var x = 1.25;
+                if (x > 0.5) {
+                    x = x - 0.5;
+                }
+                var context = canvasTeam[i].getContext('2d');
+
+                context.beginPath();
+                context.lineWidth = 1;
+                context.strokeStyle = '#0ab6a4';
+                context.arc(30, 30, 29, 1.5 * Math.PI, x * Math.PI);
+                context.stroke();
+
+                context.beginPath();
+                context.lineWidth = 1;
+                context.strokeStyle = '#ba83b8';
+                context.arc(30, 30, 29, (x + 0.03) * Math.PI, 1.47 * Math.PI);
+                context.stroke();
+            }
+        };
+
+        $scope.refresh = function (data) {
+            $scope.addMoreMediators = false;
+            $scope.involved_mediators_user_list = data.involved_mediators_user_list;
+            //$scope.mediators_whoHasAccess_toReport = data.mediators_whoHasAccess_toReport;
+            $scope.available_toAssign_mediators = data.available_toAssign_mediators;
+            $scope.currentInfo = data.currentInfo;
+            $scope.mediators_whoHasAccess_toReportG = [];
+            for (var i = 0; i < data.mediators_whoHasAccess_toReport.length; i++) {
+                if (i % 3 === 0) {
+                    $scope.mediators_whoHasAccess_toReportG.push([]);
+                }
+                $scope.mediators_whoHasAccess_toReportG[$scope.mediators_whoHasAccess_toReportG.length - 1].push(data.mediators_whoHasAccess_toReport[i]);
+            }
+        };
+
+        NewCaseTeamService.get({ id: $scope.report_id }, function (data) {
+            $scope.refresh(data);
+        });
+
+        $scope.closeBtn = function (item) {
+            NewCaseTeamService.post({ removeFromTeam: item.user.id, report_id: $scope.report_id }, function (data) {
+                $scope.refresh(data);
             });
         };
 
-        $scope.refresh();
+        $scope.addToTeam = function (item) {
+            NewCaseTeamService.post({ addToTeam: item.user.id, report_id: $scope.report_id }, function (data) {
+                $scope.refresh(data);
+            });
+        };
 
-        $scope.sendMessage = function () {
+        $scope.makeCaseOwner = function (item) {
+            NewCaseTeamService.post({ makeCaseOwner: item.user.id, report_id: $scope.report_id }, function (data) {
+                $scope.refresh(data);
+            });
         };
     }
 }());
@@ -1154,6 +1390,20 @@
 
     function AnalyticsCACSService($resource) {
         return $resource('/api/AnalyticsCACS', {}, {
+            get: { method: 'GET', params: {}, isArray: false },
+        });
+    };
+})();
+
+(function () {
+
+    'use strict';
+
+    angular.module('EC')
+        .service('AnalyticsRootCauseAnalysisService', ['$resource', AnalyticsRootCauseAnalysisService]);
+
+    function AnalyticsRootCauseAnalysisService($resource) {
+        return $resource('/api/AnalyticsRootCauseAnalysis', {}, {
             get: { method: 'GET', params: {}, isArray: false },
         });
     };
