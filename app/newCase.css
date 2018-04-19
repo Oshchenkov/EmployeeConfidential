@@ -3511,3 +3511,11 @@ body .onclick-menu-content li a{
     font-size: 14px;
     font-family: 'OpenSans-Regular', arial, verdana, sans-serif;
 	}
+
+/*===================================================
+==============    Settings / cases   =================
+====================================================*/
+body .someDropdowns{
+	max-height: 236px;
+	overflow-y: auto;
+}
