@@ -238,10 +238,10 @@
 
         $scope.Total = function (type, id) {
             if (type === 1) {
-                return $scope.totals.length <= id ? 0 : $scope.totals[id].count;
+                return $scope.totals.length <= id ? 0 : $scope.totals[id];
             }
             if (type === 2) {
-                return $scope.totals.length <= id ? 0 : $scope.totals[id].count;
+                return $scope.totals.length <= id ? 0 : $scope.totals[id];
             }
         };
     }
@@ -423,6 +423,22 @@
             return '';
         };
 
+        $scope.severityClass = function (report) {
+            if (report.severity_id === 2) {
+                return 'dashboard-col__severity-textLow';
+            }
+            if (report.severity_id === 5) {
+                return 'dashboard-col__severity-textCritical';
+            }
+            if (report.severity_id === 3) {
+                return 'dashboard-col__severity-textMedium';
+            }
+            if (report.severity_id === 4) {
+                return 'dashboard-col__severity-textHigh';
+            }
+            return '';
+        };
+
         $scope.isOwner = function (report, mediator) {
             for (var i = 0; i < report.AdvInfo.owners.length; i++) {
                 if (report.AdvInfo.owners[i].user_id === mediator.id) {
@@ -444,6 +460,7 @@
                         data.Reports[i].cc_is_life_threating = r[0].cc_is_life_threating;
                         data.Reports[i].mediators = r[0].mediators;
                         data.Reports[i].severity_s = r[0].severity_s;
+                        data.Reports[i].severity_id = r[0].severity_id;
                     }
 
                     var r = $filter('filter')(data.Users, { 'id': data.Reports[i].last_sender_id }, true);
@@ -597,7 +614,7 @@
             ['$scope', '$filter', '$location', 'EmployeeAwarenessPosterService', EmployeeAwarenessPosterController]);
 
     function EmployeeAwarenessPosterController($scope, $filter, $location, EmployeeAwarenessPosterService) {
-        $scope.SelectedSize = 1;
+        $scope.SelectedSize = 1620;
         $scope.SelectedLogo = 1;
         $scope.mainImage = '';
         $scope.id = parseInt($location.absUrl().substring($location.absUrl().indexOf('poster/') + 'poster/'.length));
@@ -607,9 +624,11 @@
         });
 
         $scope.Process = function () {
-            console.log($scope.id, $scope.SelectedSize, $scope.SelectedLogo);
-            EmployeeAwarenessPosterService.post({ type: $scope.id, size: $scope.SelectedSize, logo: $scope.SelectedLogo }, function (data) {
-                window.location = data.file;
+            EmployeeAwarenessPosterService.post({ posterId: $scope.id, type: 1, size: $scope.SelectedSize, logo1: $scope.SelectedLogo }, function (data) {
+                //window.location = data.file;
+                $scope.downloadLink = data.file;
+                document.getElementById('downloadA').setAttribute('href', data.file);
+                document.getElementById('downloadA').click();
             });
 
             return true;
@@ -634,12 +653,12 @@
             data.report_cc_crime.cc_is_clear_act_crime = '' + data.report_cc_crime.cc_is_clear_act_crime;
 
             data.report_case_closure_outcome1 = $filter('filter')(data.report_case_closure_outcome, function (value) {
-                if (value.mediator.role_in_report_id === 1) {
+                if ((value.mediator.role_in_report_id === 1) || (value.mediator.role_in_report_id === 2)) {
                     return true;
                 }
             });
             data.report_case_closure_outcome2 = $filter('filter')(data.report_case_closure_outcome, function (value) {
-                if ((value.mediator.role_in_report_id === 2) || (value.mediator.role_in_report_id === 3)) {
+                if ((value.mediator.role_in_report_id === 3)) {
                     return true;
                 }
             });
@@ -943,7 +962,7 @@
     function NewCaseMessagesController($scope, $filter, orderByFilter, $location, NewCaseMessagesService) {
         $scope.report_id = $filter('parseUrl')($location.$$absUrl, 'report_id');
 
-        $scope.activeTab = 1;
+        $scope.activeTab = $location.$$absUrl.toLowerCase().indexOf('/reporter') === -1 ? 1 : 2;
         $scope.activeMessage = {};
 
         $scope.mediators = [];
@@ -1084,6 +1103,13 @@
         $scope.closeBtn = function (item) {
             NewCaseTeamService.post({ removeFromTeam: item.user.id, report_id: $scope.report_id }, function (data) {
                 $scope.refresh(data);
+                if (!data.success) {
+                    $scope.messageModal = {
+                        title: 'Error',
+                        text: data.message,
+                    };
+                    $('#messageModal').modal();
+                }
             });
         };
 
@@ -1097,6 +1123,41 @@
             NewCaseTeamService.post({ makeCaseOwner: item.user.id, report_id: $scope.report_id }, function (data) {
                 $scope.refresh(data);
             });
+        };
+    }
+}());
+
+(function () {
+
+    'use strict';
+
+    angular
+        .module('EC')
+        .controller('NewCaseTopMenuController',
+            ['$scope', '$filter', '$location', 'NewCaseTopMenuService', NewCaseTopMenuController]);
+
+    function NewCaseTopMenuController($scope, $filter, $location, NewCaseTopMenuService) {
+        $scope.report_id = $filter('parseUrl')($location.$$absUrl, 'report_id');
+
+        $scope.refresh = function () {
+            NewCaseTopMenuService.get({ reportId: $scope.report_id }, function (data) {
+                $scope.state = data;
+            });
+        };
+
+        $scope.init = function (id) {
+            $scope.report_id = id || $scope.report_id;
+            $scope.refresh();
+        };
+
+        $scope.setIsLifeThreating = function (isLifeThreating) {
+            if (isLifeThreating) {
+                if (confirm('Does this Case or Subject pose an ongoing threat to the safety or health of the students and employees on campus? A Campus Alert will be requested if you select "OK"')) {
+                    NewCaseTopMenuService.setLifeThreating({ reportId: $scope.report_id, isLifeThreating: isLifeThreating }, function (data) {
+                        $scope.refresh();
+                    });
+                }
+            }
         };
     }
 }());
@@ -1305,16 +1366,22 @@
         $scope.title_ds = '';
         $scope.email = '';
         $scope.departments = [];
+        $scope.locations = [];
         $scope.role = 5;
         $scope.departmentId = 0;
+        $scope.locationId = 0;
         $scope.user_permissions_approve_case_closure = 0;
         $scope.user_permissions_change_settings = 0;
+        $scope.status_id = 3;
+        $scope.user_role = 0;
+        $scope.photo_path = '~/Content/Icons/settingsPersonalNOPhoto.png';
 
         $scope.val_first_nm = false;
         $scope.val_last_nm = false;
         $scope.val_title_ds = false;
         $scope.val_email = false;
         $scope.val_departmentId = false;
+        $scope.val_locationId = false;
 
         $scope.id = parseInt($location.absUrl().substring($location.absUrl().indexOf('user/') + 'user/'.length));
         $scope.id = isNaN($scope.id) ? 0 : $scope.id;
@@ -1325,10 +1392,16 @@
             $scope.title_ds = data.model.title_ds;
             $scope.email = data.model.email;
             $scope.departments = data.departments;
+            $scope.locations = data.locations;
             $scope.role = data.model.role;
             $scope.departmentId = data.model.departmentId;
+            $scope.status_id = data.model.status_id;
+            $scope.locationId = data.model.locationId;
             $scope.user_permissions_approve_case_closure = data.model.user_permissions_approve_case_closure.toString();
             $scope.user_permissions_change_settings = data.model.user_permissions_change_settings.toString();
+            $scope.user_role = data.user.role;
+            $scope.photo_path = data.model.photo_path;
+            $scope.canEditUserProfiles = data.user.CanEditUserProfiles;
         });
 
         $scope.validate = function (value, rv) {
@@ -1350,12 +1423,14 @@
             $scope.val_title_ds = !$scope.validate($scope.title_ds);
             $scope.val_email = !$scope.validate($scope.email, /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/);
             $scope.val_departmentId = $scope.departmentId == null || !$scope.validate($scope.departmentId.toString());
+            $scope.val_locationId = $scope.locationId == null || !$scope.validate($scope.locationId.toString());
 
             if (!$scope.val_first_nm
                 && !$scope.val_last_nm
                 && !$scope.val_title_ds
                 && !$scope.val_email
                 && !$scope.val_departmentId
+                && !$scope.val_locationId
                 ) {
 
                 var model = {
@@ -1366,14 +1441,20 @@
                     email: $scope.email,
                     role_id: $scope.role,
                     company_department_id: $scope.departmentId,
+                    company_location_id: $scope.locationId,
                     user_permissions_approve_case_closure: $scope.user_permissions_approve_case_closure,
                     user_permissions_change_settings: $scope.user_permissions_change_settings,
+                    status_id: $scope.status_id,
                 };
-                SettingsUserEditService.post(model, function () {
-                    if ($scope.id !== 0) {
-                        window.location = window.location;
+                SettingsUserEditService.post(model, function (data) {
+                    if (data.ok) {
+                        if ($scope.id !== 0) {
+                            window.location = window.location;
+                        } else {
+                            window.location = '/Settings/Mediators';
+                        }
                     } else {
-                        window.location = '/Settings/Mediators';
+                        alert(data.message);
                     }
                 });
             }
@@ -1522,6 +1603,21 @@
         return $resource('/api/NewCaseTeam', {}, {
             get: { method: 'GET', params: {}, isArray: false },
             post: { method: 'POST', params: {}, isArray: false },
+        });
+    };
+})();
+
+(function () {
+
+    'use strict';
+
+    angular.module('EC')
+        .service('NewCaseTopMenuService', ['$resource', NewCaseTopMenuService]);
+
+    function NewCaseTopMenuService($resource) {
+        return $resource('/api/NewCaseTopMenu', {}, {
+            get: { url: '/api/NewCaseTopMenu/get', method: 'GET', params: {}, isArray: false },
+            setLifeThreating: { url: '/api/NewCaseTopMenu/setLifeThreating', method: 'POST', params: {}, isArray: false },
         });
     };
 })();

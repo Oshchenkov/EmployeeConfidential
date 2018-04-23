@@ -4028,8 +4028,13 @@ textarea {
             color: #aeb5b7;
         }
 
+        #caseRouting .tableCasesIndex thead td:first-child {
+            padding-left: 30px;
+        }
+
         #caseRouting .tableCasesIndex tbody td:first-child {
-            text-align: center;
+            text-align: left;
+            padding-left: 30px;
             width: 145px;
         }
 
@@ -4047,7 +4052,7 @@ textarea {
     #caseRouting select, #caseRouting input {
         width: 220px;
         height: 40px;
-        margin-left: 12px;
+        /*margin-left: 12px;*/
         background-color: #f2f7f7;
         outline: none;
         border: none;
@@ -4154,4 +4159,12 @@ textarea {
 .fact-title {
 	font: 600 16px/18px 'Open Sans', sans-serif;
 	color: #727c7e;
+}
+
+html body .selectStyled{
+    max-width: 400px;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 25px 28px;
+    padding-left: 10px;
 }

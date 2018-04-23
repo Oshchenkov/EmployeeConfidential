@@ -104,7 +104,6 @@
             for (var i = 0; i < file.files.length; i++) {
                 fd.append('_file', file.files[i]);
             }
-
             $.ajax({
                 type: "POST",
                 url: urlAjaxUploadFiles,
@@ -167,30 +166,24 @@
             $('.blockRootCauses').hide();
             $('.blockSecondaryType').hide();
             $('.blockCaseAdminDepartment').hide();
-            $('.blockCaseRouting').hide();
         }
 
         function contentCompanyProfileShow() {
-            $('.menuItem:nth-child(8)').click(function () {
+            $('.menuItem:nth-child(7)').click(function () {
                 hideBlock();
                 $('.blockRootCauses').show();
             });
-            $('.menuItem:nth-child(7)').click(function () {
+            $('.menuItem:nth-child(6)').click(function () {
                 hideBlock();
                 $('.blockOutcomes').show();
             });
-            $('.menuItem:nth-child(6)').click(function () {
+            $('.menuItem:nth-child(5)').click(function () {
                 hideBlock();
                 $('.blockAnonymity').show();
             });
-            $('.menuItem:nth-child(5)').click(function () {
-                hideBlock();
-                $('.blockReporterTypes').show();
-            });
             $('.menuItem:nth-child(4)').click(function () {
                 hideBlock();
-                angular.element($('.blockCaseRouting').children().eq(0)).scope().onShow();
-                $(".blockCaseRouting").show();
+                $('.blockReporterTypes').show();
             });
             $('.menuItem:nth-child(3)').click(function () {
                 hideBlock();
@@ -359,8 +352,8 @@
             var data = '' + name + '\n' + cc;
 
             if ($('.addNewLocation input[name="newLocationName"]').val().length > 0) {
-                sendAjax('Location', data, function (id) {
-                    var s = '<div style="display:flex"><p>';
+                sendAjax('Location', data, function (html) {
+                    /*var s = '<div style="display:flex"><p>';
                     s += '<span class="location_name">' + name + '</span>';
                     if ($('#location_cc_extended').length != 0) {
                         s += '<select class="location_cc_extended_items" id="location_cc_extended_' + id + '" name="location_cc_extended_' + id + '"><option value="">Not selected</option>';
@@ -373,9 +366,10 @@
                     if (cc != 'none') {
                         $('#location_cc_extended_' + id).val(cc);
                     }
-                    init_location_cc_extended();
+                    init_location_cc_extended();*/
+                    $('#tableLocation').append(html);
                     closeIcon('Location');
-                });
+                }, 'Location');
             } else {
                 $('.addNewLocation').css('border-color', 'red');
             }
@@ -383,7 +377,7 @@
 
         function init_location_cc_extended() {
             $('.location_cc_extended_items').off().on('change', function () {
-                var name = $(this).parent().find('.location_name').text();
+                var name = $(this).parent().parent().find('.location_name').text();
                 var cc = $(this).val();
                 cc = cc === undefined ? 'none' : cc;
                 var data = '' + name + '\n' + cc;
